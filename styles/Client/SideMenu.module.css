@@ -1,0 +1,33 @@
+.sideMenuContainer {
+    position: absolute;
+    left: 0;
+    height: calc(100% - 6rem);
+    width: 20%;
+    z-index: 10000;
+    background-color: rgba(17, 17, 47, 0.73);
+    padding: 3rem;
+}
+
+.birdNameTitle {
+
+}
+
+.birdSummerySentence {
+
+}
+
+.birdSummeryParagraph {
+
+}
+
+.birdClassificationSection {
+
+}
+
+.birdStatusSection {
+
+}
+
+.birdRoutesSection {
+
+}

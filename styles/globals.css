@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+}
+
+.leaflet-div-icon {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.leaflet-contextmenu {
+    background-color:  red !important;
+}
+
+.bird-marker-menu {
+    background-color: white;
+    border: #11112f solid 1px;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 15rem;
+}
