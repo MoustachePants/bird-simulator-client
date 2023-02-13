@@ -12,8 +12,11 @@
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.11.0",
     "@types/three": "^0.149.0",
+    "dat.gui": "^0.7.9",
+    "gpu.js": "^2.16.0",
     "leaflet": "^1.9.3",
     "react": "^18.2.0",
+    "react-dat-gui": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.0",
     "three": "^0.149.0"

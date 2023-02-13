@@ -52,12 +52,6 @@ const Map = () => {
         {birdsData.map((bird) => (
           <BirdMarker bird={bird} key={bird.tailNum} />
         ))}
-        <Polyline
-          positions={[
-            { lat: 31.907, lng: 34.707415 },
-            { lat: 30.907, lng: 35.707415 },
-          ]}
-        />
       </LayerGroup>
       {menuState.isOpen && (
         <MapMenu birds={birdsData} position={menuState.position}></MapMenu>
