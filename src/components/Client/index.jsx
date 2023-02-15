@@ -10,7 +10,7 @@ const Index = (props) => {
       {/*<Header>this is the header</Header>*/}
       {/*<SideMenu>this is the aside</SideMenu>*/}
       <main>
-        <Map birdsData={props.birdsData} />
+        <Map birdsData={props.birdsData} onSelectBird={props.onSelectBird} />
       </main>
       {/*<footer>this is the footer</footer>*/}
     </div>

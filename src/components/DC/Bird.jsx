@@ -25,7 +25,9 @@ const Bird = (props) => {
     //   position={[birdPosition.x, birdAltitude, birdPosition.y]}
     // />
 
-    //   ! BUG - The camera doesn't stay on the right spot when unlocking
+    //   ! BUG - The camera doesn't stay on the right spot when unlocking && cant lock sometimes
+    //   ! i found this discussion about it: https://discourse.threejs.org/t/how-to-avoid-pointerlockcontrols-error/33017/3
+
     <PointerLockControls selector={"#DC-container"}>
       <PerspectiveCamera
         makeDefault

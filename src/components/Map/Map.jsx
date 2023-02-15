@@ -1,20 +1,16 @@
-import { intervalRate, runFrontInterval, APIURL } from "/config";
-
 import "leaflet/dist/leaflet.css";
 import style from "/styles/Home.module.css";
-
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
 import {
   LayerGroup,
   MapContainer,
   TileLayer,
-  Polyline,
-  Popup,
+  useMapEvents,
 } from "react-leaflet";
 import BirdMarker from "./BirdMarker.jsx";
 import MapEvents from "./MapEvents";
 import MapMenu from "./MapMenu.jsx";
+
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
     isOpen: false,

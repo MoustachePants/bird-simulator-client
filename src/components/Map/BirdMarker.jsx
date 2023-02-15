@@ -1,9 +1,20 @@
 import "./BirdMarker.css";
 
 import leaflet from "leaflet";
-import { Marker, Popup, Tooltip } from "react-leaflet";
+import { Marker, Popup, Tooltip, useMapEvents } from "react-leaflet";
 import { useRef, useState } from "react";
 import BirdMenu from "./BirdMenu.jsx";
+
+// ? Needs work on selected birds
+const BirdMarkerEvents = () => {
+  const birdMarkerEventHandlers = useMapEvents({
+    click: () => {
+      console.log("marker clicked");
+    },
+  });
+
+  return null;
+};
 
 const BirdMarker = (props) => {
   const [isChecked, setIfChecked] = useState(false);
@@ -53,7 +64,9 @@ const BirdMarker = (props) => {
           //   setIfChecked(true);
           // },
         }}
-      ></Marker>
+      >
+        <BirdMarkerEvents />
+      </Marker>
       {menuState.isOpen && (
         <BirdMenu bird={bird} position={menuState.position} />
       )}

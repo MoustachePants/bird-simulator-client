@@ -4,13 +4,18 @@ import DC from "./components/DC";
 
 import { useEffect, useState } from "react";
 import { APIURL, intervalRate, runFrontInterval } from "../config.js";
+import birdFinder from "./utils/birdFinder.js";
 
 function App() {
   const [birdsData, setBirdsData] = useState([]);
-  const [selectedBirdTailNum, setSelectedBirdTailNum] = useState(0);
+  const [selectedBird, setSelectedBird] = useState({
+    bird: {},
+    birdIndex: null,
+  });
 
   const selectBirdHandler = (tailNum) => {
-    setSelectedBirdTailNum(tailNum);
+    const { bird, birdIndex } = birdFinder(birdsData, tailNum);
+    setSelectedBird({ bird, birdIndex });
   };
 
   useEffect(() => {
@@ -30,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Client birdsData={birdsData} onSelectBird={selectBirdHandler} />
-      <DC birdsData={birdsData} />
+      {selectedBird.birdIndex && <DC birdData={selectedBird.bird} />}
     </div>
   );
 }
