@@ -3,31 +3,36 @@ import "./gui.css";
 
 import * as THREE from "three";
 
-import { Canvas, useLoader, useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Terrain from "./Terrain";
-import { useState } from "react";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import {
+  FlyControls,
+  OrbitControls,
+  FirstPersonControls,
+  PointerLockControls,
+} from "@react-three/drei";
+// import Terrain from "./Terrain";
+import { useEffect, useRef, useState } from "react";
 import IsraelTerrain from "./IsraelTerrain.jsx";
-import { Sky } from "@react-three/drei";
+import { Sky, PerspectiveCamera } from "@react-three/drei";
+import Bird from "./Bird.jsx";
 
-const DC = () => {
-  // const [flight, setFlight] = useState({
-  //   bearing: 360,
-  //   height: 100,
-  // });
-
+const DC = (props) => {
   return (
-    <div className={style.container}>
-      <Canvas camera={{ fov: 75, near: 0.1, far: 10000, position: [0, 0, 5] }}>
-        {/*<pointLight args={["white", 2, 1500]} position={[200, 1000, 50]} />*/}
-        <axesHelper />
-        <ambientLight args={[0x404040, 1]} />
-        <OrbitControls />
-        {/*<Terrain flightState={flight} />*/}
-        <IsraelTerrain />
+    <div className={style.container} id="DC-container">
+      <Canvas>
         <pointLight intensity={2} position={[7, 5, 1]} />
         <Sky sunPosition={[7, 5, 1]} />
-        <fog attach="fog" args={["white", 0, 26]} />
+        <fog attach="fog" args={["white", 0, 15]} />
+
+        {props.birdsData.map((bird) => (
+          <Bird
+            position={bird.position}
+            key={bird.tailNum}
+            altitude={bird.altitude}
+            bearing={bird.bearing}
+          />
+        ))}
+        <IsraelTerrain />
       </Canvas>
     </div>
   );

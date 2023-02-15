@@ -15,26 +15,12 @@ import {
 import BirdMarker from "./BirdMarker.jsx";
 import MapEvents from "./MapEvents";
 import MapMenu from "./MapMenu.jsx";
-const Map = () => {
-  const [birdsData, setBirdsData] = useState([]);
+const Map = (props) => {
   const [menuState, setMenuState] = useState({
     isOpen: false,
     position: { lat: 0, lng: 0 },
   });
-
-  useEffect(() => {
-    if (!runFrontInterval) return;
-
-    setInterval(async () => {
-      const fetchBirdsData = async () => {
-        const res = await fetch(APIURL);
-        const data = await res.json();
-        setBirdsData(data);
-      };
-
-      await fetchBirdsData();
-    }, intervalRate);
-  }, []);
+  const birdsData = props.birdsData;
 
   return (
     <MapContainer

@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
 
 import perlin from "../../utils/perlin.js";
 import * as THREE from "three";
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 
-const gui = new dat.GUI();
-gui.domElement.id = "gui";
+// const gui = new dat.GUI();
+// gui.domElement.id = "gui";
 
 const Terrain = (props) => {
   const { bearing, height } = props.flightState;
@@ -42,13 +42,13 @@ const Terrain = (props) => {
     geometry.computeVertexNormals();
   };
 
-  useEffect(() => {
-    const { material } = planeRef.current;
-    // console.log(planeRef);
-    gui.add(material, "metalness").min(0).max(1).step(0.0001);
-    gui.add(material, "roughness").min(0).max(1).step(0.0001);
-    gui.add(material, "displacementScale").min(0).max(500).step(1);
-  });
+  // useEffect(() => {
+  //   const { material } = planeRef.current;
+  //   // console.log(planeRef);
+  //   gui.add(material, "metalness").min(0).max(1).step(0.0001);
+  //   gui.add(material, "roughness").min(0).max(1).step(0.0001);
+  //   gui.add(material, "displacementScale").min(0).max(500).step(1);
+  // });
 
   return (
     <mesh ref={planeRef} rotation={[-Math.PI / 2, 0, 0]}>
