@@ -1,0 +1,7 @@
+.DC-header {
+    /*height: 2rem;*/
+    padding: 0.5rem 1rem;
+    display: flex;
+    color: white;
+    line-height: 1rem;
+}

@@ -8,14 +8,11 @@ import birdFinder from "./utils/birdFinder.js";
 
 function App() {
   const [birdsData, setBirdsData] = useState([]);
-  const [selectedBird, setSelectedBird] = useState({
-    bird: {},
-    birdIndex: null,
-  });
+  const [selectedBirdIndex, setSelectedBirdIndex] = useState(null);
 
   const selectBirdHandler = (tailNum) => {
     const { bird, birdIndex } = birdFinder(birdsData, tailNum);
-    setSelectedBird({ bird, birdIndex });
+    setSelectedBirdIndex(birdIndex);
   };
 
   useEffect(() => {
@@ -34,8 +31,15 @@ function App() {
 
   return (
     <div className="App">
-      <Client birdsData={birdsData} onSelectBird={selectBirdHandler} />
-      {selectedBird.birdIndex && <DC birdData={selectedBird.bird} />}
+      <Client
+        birdsData={birdsData}
+        selectedBirdTailNum={birdsData[selectedBirdIndex]?.tailNum}
+        selectedBirdIndex={selectedBirdIndex}
+        onSelectBird={selectBirdHandler}
+      />
+      {selectedBirdIndex !== null && (
+        <DC birdData={birdsData[selectedBirdIndex]} />
+      )}
     </div>
   );
 }

@@ -2,3 +2,29 @@
     background-color: transparent !important;
     border: none !important;
 }
+
+.bird-map-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bird-map-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+}
+
+.bird-map-icon-selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    outline: #1c1c9a dashed 3px;
+}
+
+.bird-map-icon-img {
+    width: 4.5rem;
+    height: 4.5rem;
+}

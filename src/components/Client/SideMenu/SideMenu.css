@@ -1,0 +1,31 @@
+.side-menu-container {
+    background-color: rgba(17, 29, 33, 0.95);
+    position: absolute;
+    z-index: 1000;
+    width: 17rem;
+    height: calc(100% - 5rem);
+    color: white;
+    padding: 2.5rem;
+}
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.bird-summery {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.53);
+}
+
+.bird-status-container {
+    margin-top: 2rem;
+    /*border: white solid 1px;*/
+}
+
+.bird-status-current-commands {
+    margin-top: 1rem;
+    border: white solid;
+}

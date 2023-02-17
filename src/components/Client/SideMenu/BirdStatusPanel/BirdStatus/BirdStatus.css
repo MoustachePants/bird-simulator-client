@@ -1,0 +1,35 @@
+.bird-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.bird-status-group .bird-status {
+    width: 36%;
+}
+
+
+.bird-status div {
+}
+
+.status-icon {
+    filter: invert();
+    aspect-ratio: 1;
+    width: 1.8rem;
+
+}
+
+.status-data {
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.unit {
+    font-size: 0.8rem;
+}
+

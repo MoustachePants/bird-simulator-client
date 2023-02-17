@@ -5,7 +5,7 @@ import {
   LayerGroup,
   MapContainer,
   TileLayer,
-  useMapEvents,
+  ZoomControl,
 } from "react-leaflet";
 import BirdMarker from "./BirdMarker.jsx";
 import MapEvents from "./MapEvents";
@@ -18,21 +18,34 @@ const Map = (props) => {
   });
   const birdsData = props.birdsData;
 
+  const selectBirdHandler = (tailNum) => {
+    props.onSelectBird(tailNum);
+  };
+
   return (
     <MapContainer
       className={style.map}
       center={[31.3913935, 35.0263349]}
       zoom={8}
+      zoomControl={false}
       scrollWheelZoom={true}
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      <ZoomControl position="topright" />
+      <TileLayer // ! if I upload online I should add the attribution!
+        // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}"
+        ext="jpg"
+        maxZoom={16}
       />
-      <MapEvents onContextMenu={setMenuState} />
+      <MapEvents onContextMenu={setMenuState} onDeSelect={selectBirdHandler} />
       <LayerGroup>
         {birdsData.map((bird) => (
-          <BirdMarker bird={bird} key={bird.tailNum} />
+          <BirdMarker
+            bird={bird}
+            key={bird.tailNum}
+            onSelect={selectBirdHandler}
+            selectedBirdTailNum={props.selectedBirdTailNum}
+          />
         ))}
       </LayerGroup>
       {menuState.isOpen && (

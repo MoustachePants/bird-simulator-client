@@ -5,19 +5,7 @@ import { Marker, Popup, Tooltip, useMapEvents } from "react-leaflet";
 import { useRef, useState } from "react";
 import BirdMenu from "./BirdMenu.jsx";
 
-// ? Needs work on selected birds
-const BirdMarkerEvents = () => {
-  const birdMarkerEventHandlers = useMapEvents({
-    click: () => {
-      console.log("marker clicked");
-    },
-  });
-
-  return null;
-};
-
 const BirdMarker = (props) => {
-  const [isChecked, setIfChecked] = useState(false);
   const markerRef = useRef();
   const [menuState, setMenuState] = useState({
     isOpen: false,
@@ -33,16 +21,23 @@ const BirdMarker = (props) => {
         icon={leaflet.divIcon({
           iconSize: [90, 60],
           iconAnchor: [45, 30],
-          html: `<div>
-                <img 
-                    style="transform: rotate(${bird.bearing}deg);"
-                    class="bird-map-icon"
-                    height="70" 
-                    width="45" 
-                    src='/bird/birdIcon.png'
-                    alt="bird-icon">
-                    
-                ${bird.altitude}
+          html: `<div class="bird-map-icon-container">
+               <div class=${
+                 props.selectedBirdTailNum === bird.tailNum
+                   ? "bird-map-icon-selected bird-map-icon"
+                   : "bird-map-icon"
+               }
+               }>
+                    <img 
+                        style="transform: rotate(${bird.bearing}deg);"
+                        class="bird-map-icon-img" 
+                        height="70" 
+                        width="45" 
+                        src='/bird/birdIcon.png'
+                        alt="bird-icon">
+                    </div>
+ 
+                    ${bird.altitude}
                 </div>`,
         })}
         // rotationAngle={bird.heading}
@@ -50,23 +45,22 @@ const BirdMarker = (props) => {
         style="transform: rotate(80deg);"
         key={Math.random()}
         ref={markerRef}
-        eventHandlers={{
-          contextmenu: () => {
-            setMenuState({
-              isOpen: true,
-              position: markerRef.current.getLatLng(),
-            });
-
-            // setMarkerPosition(() => markerRef.current.getLatLng());
-            // setIsBirdMenuOpen((prev) => !prev);
+        eventHandlers={
+          ({
+            contextmenu: () => {
+              setMenuState({
+                isOpen: true,
+                position: markerRef.current.getLatLng(),
+              });
+            },
           },
-          // checked: () => {
-          //   setIfChecked(true);
-          // },
-        }}
-      >
-        <BirdMarkerEvents />
-      </Marker>
+          {
+            click: () => {
+              props.onSelect(bird.tailNum);
+            },
+          })
+        }
+      ></Marker>
       {menuState.isOpen && (
         <BirdMenu bird={bird} position={menuState.position} />
       )}
