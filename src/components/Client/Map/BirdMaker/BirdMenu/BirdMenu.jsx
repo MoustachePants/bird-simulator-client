@@ -1,4 +1,4 @@
-import style from "/src/components/Map/BirdMenu.module.css";
+import style from "/src/components/Client/Map/BirdMaker/BirdMenu/BirdMenu.module.css";
 import { useState } from "react";
 import { Popup } from "react-leaflet";
 

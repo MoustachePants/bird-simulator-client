@@ -1,9 +1,8 @@
 import "./client.css";
 
-import Map from "../Map/Map.jsx";
+import Map from "./Map";
 import SideMenu from "./SideMenu/index.jsx";
-import { useEffect } from "react";
-import Header from "./Header.jsx";
+
 const Client = (props) => {
   return (
     <div className="client-container">

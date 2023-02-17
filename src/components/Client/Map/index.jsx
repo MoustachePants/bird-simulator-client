@@ -7,9 +7,9 @@ import {
   TileLayer,
   ZoomControl,
 } from "react-leaflet";
-import BirdMarker from "./BirdMarker.jsx";
-import MapEvents from "./MapEvents";
-import MapMenu from "./MapMenu.jsx";
+import BirdMarker from "./BirdMaker/";
+import MapEvents from "./MapEvents.jsx";
+import ContextMenu from "./DestinationContextMenu/index.jsx";
 
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
@@ -32,7 +32,7 @@ const Map = (props) => {
     >
       <ZoomControl position="topright" />
       <TileLayer // ! if I upload online I should add the attribution!
-        // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        // attribution='Index tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Index data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}"
         ext="jpg"
         maxZoom={16}
@@ -49,7 +49,11 @@ const Map = (props) => {
         ))}
       </LayerGroup>
       {menuState.isOpen && (
-        <MapMenu birds={birdsData} position={menuState.position}></MapMenu>
+        <ContextMenu
+          birds={birdsData}
+          position={menuState.position}
+          afterUse={setMenuState}
+        />
       )}
     </MapContainer>
   );

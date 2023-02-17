@@ -1,12 +1,16 @@
-import { APIURL } from "../../../config.js";
+import "./ContextMenuProperty.css";
 
-import { Popup } from "react-leaflet";
+import useIcon from "../../src/hooks/useIcon.jsx";
+import { APIURL } from "../../config.js";
 
-const MapMenu = (props) => {
+const ContextMenuProperty = (props) => {
+  const icon = useIcon(props.icon);
+  const property = props.property;
+
   const menuSendCommand = (event) => {
     event.preventDefault();
 
-    const tailNum = event.target.dataset.tailnum;
+    const tailNum = props.tailnum;
     const requiredPosition = props.position;
 
     const commandBody = {
@@ -28,19 +32,10 @@ const MapMenu = (props) => {
   };
 
   return (
-    <Popup position={props.position}>
-      FlyTo -
-      {props.birds.map((bird) => (
-        <button
-          key={bird.tailNum}
-          onClick={menuSendCommand}
-          data-tailnum={bird.tailNum}
-        >
-          {bird.tailNum}
-        </button>
-      ))}
-    </Popup>
+    <div className="context-menu-property" onClick={menuSendCommand}>
+      <p>{property}</p>
+    </div>
   );
 };
 
-export default MapMenu;
+export default ContextMenuProperty;

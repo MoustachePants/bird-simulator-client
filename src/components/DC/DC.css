@@ -5,7 +5,9 @@
     right: 1rem;
     background-color: var(--main-color);
     border: var(--main-color) solid 2px;
-    border-radius: 10px;
+    border-radius: 7px;
+    overflow: hidden;
+
 }
 
 .canvas-container {

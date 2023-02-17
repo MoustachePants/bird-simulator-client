@@ -1,0 +1,7 @@
+.context-menu-property{}
+
+.context-menu-property-icon{
+    aspect-ratio: 1;
+    filter: invert();
+    width: 1.8rem;
+}

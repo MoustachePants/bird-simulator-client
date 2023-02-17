@@ -1,5 +1,6 @@
 :root {
     --main-color: rgba(17, 29, 33, 0.95);
+    --secondary-color: rgba(255, 255, 255, 0.07)
 }
 
 * {

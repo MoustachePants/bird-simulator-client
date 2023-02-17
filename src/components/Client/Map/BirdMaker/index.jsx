@@ -3,9 +3,9 @@ import "./BirdMarker.css";
 import leaflet from "leaflet";
 import { Marker, Popup, Tooltip, useMapEvents } from "react-leaflet";
 import { useRef, useState } from "react";
-import BirdMenu from "./BirdMenu.jsx";
+import BirdMenu from "./BirdMenu/BirdMenu.jsx";
 
-const BirdMarker = (props) => {
+const Index = (props) => {
   const markerRef = useRef();
   const [menuState, setMenuState] = useState({
     isOpen: false,
@@ -68,4 +68,4 @@ const BirdMarker = (props) => {
   );
 };
 
-export default BirdMarker;
+export default Index;
