@@ -8,7 +8,7 @@ const SideMenu = (props) => {
   return (
     <div className="side-menu-container">
       <section className="side-menu-header">
-        <h1>Pigeon</h1>
+        <h1>{bird.name}</h1>
         <h2>#{bird.tailNum}</h2>
       </section>
       <p className="bird-summery">

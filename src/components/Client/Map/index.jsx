@@ -1,5 +1,6 @@
 import "leaflet/dist/leaflet.css";
-import style from "/styles/Home.module.css";
+import "./Map.css";
+
 import { useState } from "react";
 import {
   LayerGroup,
@@ -25,13 +26,13 @@ const Map = (props) => {
 
   return (
     <MapContainer
-      className={style.map}
+      className="map"
       center={[31.3913935, 35.0263349]}
       zoom={8}
       zoomControl={false}
       scrollWheelZoom={true}
       minZoom={5}
-      maxZoom={16}
+      maxZoom={15}
     >
       <ZoomControl position="topright" />
       <TileLayer // ! if I upload online I should add the attribution!

@@ -4,6 +4,7 @@ import leaflet from "leaflet";
 import { Marker, Popup, Tooltip, useMapEvents } from "react-leaflet";
 import { useRef, useState } from "react";
 import BirdMenu from "./BirdMenu/BirdMenu.jsx";
+import useIcon from "../../../../hooks/useIcon.jsx";
 
 const Index = (props) => {
   const markerRef = useRef();
@@ -11,6 +12,7 @@ const Index = (props) => {
     isOpen: false,
     position: { lat: 0, lng: 0 },
   });
+  const markerIcon = useIcon(props.bird.type);
 
   const bird = props.bird;
 
@@ -31,9 +33,7 @@ const Index = (props) => {
                     <img 
                         style="transform: rotate(${bird.bearing}deg);"
                         class="bird-map-icon-img" 
-                        height="70" 
-                        width="45" 
-                        src='/bird/birdIcon.png'
+                        src='${markerIcon}'
                         alt="bird-icon">
                     </div>
  

@@ -29,7 +29,7 @@
   background-color: var(--secondary-color);
   color: white;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
   width: 100%;
 }
