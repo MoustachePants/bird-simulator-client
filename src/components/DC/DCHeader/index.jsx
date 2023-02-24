@@ -4,16 +4,16 @@ import useIcon from "../../../hooks/useIcon.jsx";
 const DCHeader = (props) => {
   const closeIcon = useIcon("close");
 
-  const closeDCHandler = () => {};
+  const closeDCHandler = () => {
+    props.onCloseBirdEyeView();
+  };
 
   return (
     <header className="DC-header">
       <section>Pigeon #1 Eye View</section>
-      <img
-        onClick={closeDCHandler}
-        className="DC-close-button"
-        src={closeIcon}
-      />
+      <button className="DC-close-button" onClick={closeDCHandler}>
+        <img src={closeIcon} />
+      </button>
     </header>
   );
 };

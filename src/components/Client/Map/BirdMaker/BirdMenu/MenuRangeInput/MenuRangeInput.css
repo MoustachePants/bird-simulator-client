@@ -1,0 +1,40 @@
+.context-menu-section {
+}
+
+.context-menu-section header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.context-menu-section footer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.context-menu-icon {
+  filter: invert();
+  aspect-ratio: 1;
+  width: 1rem;
+}
+
+.rangeInputContainer {
+  width: 100%;
+  position: relative;
+}
+
+.rangeInput {
+  width: 100%;
+}
+
+.rangeInputValueContainer {
+  background-color: red;
+}
+
+.rangeInputValue {
+  position: absolute;
+  /*background-color: red;*/
+}

@@ -12,12 +12,12 @@ const DC = (props) => {
 
   return (
     <div className="DC-container">
-      <DCHeader />
+      <DCHeader onCloseBirdEyeView={props.onCloseBirdEyeView} />
       <div className="canvas-container">
         <Canvas>
           <pointLight intensity={2} position={[7, 5, 1]} />
           <Sky sunPosition={[7, 5, 1]} />
-          <fog attach="fog" args={["white", 0, 15]} />
+          {/*<fog attach="fog" args={["white", 0, 15]} />*/}
           <Bird
             position={bird.position}
             key={bird.tailNum}

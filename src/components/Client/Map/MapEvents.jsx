@@ -8,7 +8,7 @@ const MapEvents = (props) => {
         position: event.latlng,
       });
     },
-    dblclick: () => {
+    click: () => {
       props.onDeSelect(null);
     },
   });

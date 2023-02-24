@@ -9,10 +9,21 @@ import birdFinder from "./utils/birdFinder.js";
 function App() {
   const [birdsData, setBirdsData] = useState([]);
   const [selectedBirdIndex, setSelectedBirdIndex] = useState(null);
+  const [selectedEyeViewBirdIndex, setSelectedEyeViewBirdIndex] =
+    useState(null);
 
   const selectBirdHandler = (tailNum) => {
     const { bird, birdIndex } = birdFinder(birdsData, tailNum);
     setSelectedBirdIndex(birdIndex);
+  };
+
+  const openBirdEyeView = (tailNum) => {
+    const { bird, birdIndex } = birdFinder(birdsData, tailNum);
+    setSelectedEyeViewBirdIndex(birdIndex);
+  };
+
+  const closeBirdEyeViewHandler = () => {
+    setSelectedEyeViewBirdIndex(null);
   };
 
   useEffect(() => {
@@ -36,9 +47,13 @@ function App() {
         selectedBirdTailNum={birdsData[selectedBirdIndex]?.tailNum}
         selectedBirdIndex={selectedBirdIndex}
         onSelectBird={selectBirdHandler}
+        onOpenBirdEyeView={openBirdEyeView}
       />
-      {selectedBirdIndex !== null && (
-        <DC birdData={birdsData[selectedBirdIndex]} />
+      {selectedEyeViewBirdIndex !== null && birdsData !== null && (
+        <DC
+          birdData={birdsData[selectedEyeViewBirdIndex]}
+          onCloseBirdEyeView={closeBirdEyeViewHandler}
+        />
       )}
     </div>
   );

@@ -1,18 +1,23 @@
 .DC-container {
-    position: absolute;
-    z-index: 1000;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: var(--main-color);
-    border: var(--main-color) solid 2px;
-    border-radius: 7px;
-    overflow: hidden;
+  position: absolute;
+  z-index: 1000;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--main-color);
+  border: var(--main-color) solid 2px;
+  border-radius: 7px;
+  overflow: hidden;
 
+  width: 30rem;
+  height: 17rem;
+  resize: both;
+
+  /*width: 100%;*/
+  /*height: 100%;*/
 }
 
 .canvas-container {
-    width: 30rem;
-    height: 17rem;
-    /*width: 100%;*/
-    /*height: 100%;*/
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }

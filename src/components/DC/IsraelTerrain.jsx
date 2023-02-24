@@ -7,6 +7,7 @@ const IsraelTerrain = () => {
   const elevation = useLoader(TextureLoader, "/DC/israelHeightMap.png");
   const normalMap = useLoader(TextureLoader, "/DC/NormalMap.png");
   const map = useLoader(TextureLoader, "/DC/israelSized.jpg");
+  // const map2 = useLoader(TextureLoader, "/DC/north-israel.jpg");
 
   const planeRef = useRef(null);
 

@@ -15,6 +15,7 @@ const Client = (props) => {
           birdsData={props.birdsData}
           onSelectBird={props.onSelectBird}
           selectedBirdTailNum={props.selectedBirdTailNum}
+          onOpenBirdEyeView={props.onOpenBirdEyeView}
         />
       </main>
       {/*<footer>this is the footer</footer>*/}

@@ -1,0 +1,53 @@
+.leaflet-popup-content-wrapper {
+  background-color: transparent;
+  /*box-shadow: unset;*/
+  padding: unset;
+  width: unset;
+}
+
+.leaflet-popup-content {
+  margin: unset;
+}
+
+.leaflet-popup-tip {
+  background: rgba(0, 0, 0, 0) !important;
+  box-shadow: none !important;
+}
+
+.bird-menu-popup-container {
+  width: 11rem;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.7rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.openEyeViewButton {
+  background-color: var(--secondary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.openEyeViewButton:hover {
+  border: var(--button-hover-border-color-default) solid 1px;
+}
+
+.openEyeViewButton:active {
+  background-color: var(--button-active-background-color-default);
+}
+
+.openEyeViewButton:focus {
+  outline: transparent;
+}
+
+.openEyeViewButton img {
+  aspect-ratio: 1;
+  width: 1.6rem;
+  filter: invert();
+}

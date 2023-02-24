@@ -3,38 +3,23 @@ import "./DestinationContextMenu.css";
 import { APIURL } from "../../../../../config.js";
 import { Popup, useMap } from "react-leaflet";
 import useIcon from "../../../../hooks/useIcon.jsx";
+import useBirdCommand from "../../../../hooks/useBirdCommand.jsx";
 
-const ContextMenu = (props) => {
+const DestinationContextMenu = (props) => {
+  const sendCommand = useBirdCommand();
   const icon = useIcon("position");
   const map = useMap();
 
-  const menuSendCommand = (event) => {
+  const menuSendCommandHandler = (event) => {
     event.preventDefault();
-
     const tailNum = event.target.dataset.tailnum;
-    const requiredPosition = props.position;
-
-    const commandBody = {
-      tailNum: Number(tailNum),
-      requiredPosition,
-    };
-
-    const sendCommand = async () => {
-      await fetch(APIURL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(commandBody),
-      });
-    };
-
-    sendCommand();
+    const destination = props.position;
+    sendCommand({ tailNum, destination });
     map.closePopup();
   };
 
   return (
-    <Popup position={props.position} closeButton={false} offset={[95, 120]}>
+    <Popup position={props.position} closeButton={false} offset={[95, 110]}>
       <div className="popup-container">
         <header className="popup-header">
           <img className="context-menu-icon" src={icon} />
@@ -44,7 +29,7 @@ const ContextMenu = (props) => {
         {props.birds.map((bird) => (
           <button
             className="context-menu-bird-destination-button"
-            onClick={menuSendCommand}
+            onClick={menuSendCommandHandler}
             data-tailnum={bird.tailNum}
             key={bird.tailNum}
           >
@@ -56,4 +41,4 @@ const ContextMenu = (props) => {
   );
 };
 
-export default ContextMenu;
+export default DestinationContextMenu;

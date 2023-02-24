@@ -10,6 +10,7 @@ import {
 import BirdMarker from "./BirdMaker/";
 import MapEvents from "./MapEvents.jsx";
 import ContextMenu from "./DestinationContextMenu/index.jsx";
+import DestinationContextMenu from "./DestinationContextMenu/index.jsx";
 
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
@@ -29,13 +30,14 @@ const Map = (props) => {
       zoom={8}
       zoomControl={false}
       scrollWheelZoom={true}
+      minZoom={5}
+      maxZoom={16}
     >
       <ZoomControl position="topright" />
       <TileLayer // ! if I upload online I should add the attribution!
         // attribution='Index tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Index data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}"
         ext="jpg"
-        maxZoom={16}
       />
       <MapEvents onContextMenu={setMenuState} onDeSelect={selectBirdHandler} />
       <LayerGroup>
@@ -45,11 +47,12 @@ const Map = (props) => {
             key={bird.tailNum}
             onSelect={selectBirdHandler}
             selectedBirdTailNum={props.selectedBirdTailNum}
+            onOpenBirdEyeView={props.onOpenBirdEyeView}
           />
         ))}
       </LayerGroup>
       {menuState.isOpen && (
-        <ContextMenu
+        <DestinationContextMenu
           birds={birdsData}
           position={menuState.position}
           afterUse={setMenuState}

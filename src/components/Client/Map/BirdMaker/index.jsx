@@ -45,24 +45,25 @@ const Index = (props) => {
         style="transform: rotate(80deg);"
         key={Math.random()}
         ref={markerRef}
-        eventHandlers={
-          ({
-            contextmenu: () => {
-              setMenuState({
-                isOpen: true,
-                position: markerRef.current.getLatLng(),
-              });
-            },
+        eventHandlers={{
+          contextmenu: () => {
+            setMenuState({
+              isOpen: true,
+              position: markerRef.current.getLatLng(),
+            });
           },
-          {
-            click: () => {
-              props.onSelect(bird.tailNum);
-            },
-          })
-        }
+
+          click: () => {
+            props.onSelect(bird.tailNum);
+          },
+        }}
       ></Marker>
       {menuState.isOpen && (
-        <BirdMenu bird={bird} position={menuState.position} />
+        <BirdMenu
+          bird={bird}
+          position={menuState.position}
+          onOpenBirdEyeView={props.onOpenBirdEyeView}
+        />
       )}
     </>
   );
