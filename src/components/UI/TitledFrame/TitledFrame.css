@@ -1,0 +1,5 @@
+.titled-frame {
+  border: var(--button-hover-border-color-default) solid 1px;
+  border-radius: 8px;
+  padding: 0.5rem;
+}

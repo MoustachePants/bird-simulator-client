@@ -1,6 +1,7 @@
 import "./SideMenu.css";
 
 import BirdStatusPanel from "./BirdStatusPanel/index.jsx";
+import TitledFrame from "../../UI/TitledFrame/index.jsx";
 
 const SideMenu = (props) => {
   const bird = props.birdData;
@@ -17,7 +18,9 @@ const SideMenu = (props) => {
         Accusamus alias commodi cupiditate dolore doloribus illum ipsa nam
         nostrum.
       </p>
-      <BirdStatusPanel bird={bird} />
+      <TitledFrame title="Status">
+        <BirdStatusPanel bird={bird} />
+      </TitledFrame>
       {/*<section className="bird-status-current-commands">*/}
       {/*  <ul>*/}
       {/*    <li>height 100 to 1000</li>*/}
