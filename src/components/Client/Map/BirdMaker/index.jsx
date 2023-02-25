@@ -22,7 +22,7 @@ const Index = (props) => {
         position={[bird.position.lat, bird.position.lng]}
         icon={leaflet.divIcon({
           iconSize: [90, 60],
-          iconAnchor: [45, 30],
+          iconAnchor: [30, 50],
           html: `<div class="bird-map-icon-container">
                <div class=${
                  props.selectedBirdTailNum === bird.tailNum
