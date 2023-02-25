@@ -7,13 +7,12 @@ import {
   MapContainer,
   TileLayer,
   ZoomControl,
-  Polyline,
 } from "react-leaflet";
 import BirdMarker from "./BirdMaker/";
 import MapEvents from "./MapEvents.jsx";
 import DestinationContextMenu from "./DestinationContextMenu/index.jsx";
 import BirdFlyTo from "./BirdFlyTo/index.jsx";
-import MigrationPaths from "./MigrationPaths/index.jsx";
+import Entities from "./Entities/index.jsx";
 
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
@@ -59,9 +58,7 @@ const Map = (props) => {
           </div>
         ))}
       </LayerGroup>
-      <LayerGroup>
-        <MigrationPaths />
-      </LayerGroup>
+      <Entities />
       {menuState.isOpen && (
         <DestinationContextMenu
           birds={birdsData}
