@@ -37,7 +37,13 @@ const Index = (props) => {
                         alt="bird-icon">
                     </div>
  
-                    ${bird.altitude}
+                    ${bird.altitude.toFixed(
+                      props.bird.altitude <= 100
+                        ? 2
+                        : props.bird.altitude <= 1000
+                        ? 1
+                        : 0
+                    )}
                 </div>`,
         })}
         // rotationAngle={bird.heading}

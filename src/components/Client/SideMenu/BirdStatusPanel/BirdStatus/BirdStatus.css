@@ -1,35 +1,32 @@
 .bird-status {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: var(--secondary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .bird-status-group .bird-status {
-    width: 36%;
+  width: 36%;
 }
-
 
 .bird-status div {
 }
 
 .status-icon {
-    filter: invert();
-    aspect-ratio: 1;
-    width: 1.8rem;
-
+  filter: invert();
+  aspect-ratio: 1;
+  width: 1.5rem;
 }
 
 .status-data {
-    display: flex;
-    align-items: baseline;
-    gap: 0.2rem;
-    font-size: 1.1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  font-size: 1.1rem;
 }
 
 .unit {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
-
