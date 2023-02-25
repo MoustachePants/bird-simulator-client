@@ -13,6 +13,7 @@ import BirdMarker from "./BirdMaker/";
 import MapEvents from "./MapEvents.jsx";
 import DestinationContextMenu from "./DestinationContextMenu/index.jsx";
 import BirdFlyTo from "./BirdFlyTo/index.jsx";
+import MigrationPaths from "./MigrationPaths/index.jsx";
 
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
@@ -44,10 +45,9 @@ const Map = (props) => {
       <MapEvents onContextMenu={setMenuState} onDeSelect={selectBirdHandler} />
       <LayerGroup>
         {birdsData.map((bird) => (
-          <>
+          <div key={bird.tailNum}>
             <BirdMarker
               bird={bird}
-              key={bird.tailNum}
               onSelect={selectBirdHandler}
               selectedBirdTailNum={props.selectedBirdTailNum}
               onOpenBirdEyeView={props.onOpenBirdEyeView}
@@ -56,8 +56,11 @@ const Map = (props) => {
               position={bird.position}
               requiredPosition={bird.required.position}
             />
-          </>
+          </div>
         ))}
+      </LayerGroup>
+      <LayerGroup>
+        <MigrationPaths />
       </LayerGroup>
       {menuState.isOpen && (
         <DestinationContextMenu
