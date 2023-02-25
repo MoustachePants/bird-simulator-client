@@ -1,0 +1,10 @@
+.bird-status-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bird-status-group {
+    display: flex;
+    justify-content: space-between;
+}

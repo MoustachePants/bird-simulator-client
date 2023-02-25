@@ -1,6 +1,6 @@
 import "./BirdStatusPanel.css";
 
-import BirdStatus from "./BirdStatus/index";
+import BirdStatus from "../BirdStatus/index.jsx";
 
 const BirdStatusPanel = (props) => {
   return (
