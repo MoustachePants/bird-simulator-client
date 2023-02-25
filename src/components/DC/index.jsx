@@ -12,7 +12,11 @@ const DC = (props) => {
 
   return (
     <div className="DC-container">
-      <DCHeader onCloseBirdEyeView={props.onCloseBirdEyeView} />
+      <DCHeader
+        onCloseBirdEyeView={props.onCloseBirdEyeView}
+        birdName={bird.name}
+        birdTailNum={bird.tailNum}
+      />
       <div className="canvas-container">
         <Canvas>
           <pointLight intensity={2} position={[7, 5, 1]} />

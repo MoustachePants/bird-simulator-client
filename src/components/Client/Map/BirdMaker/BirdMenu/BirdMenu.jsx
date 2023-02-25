@@ -14,8 +14,9 @@ const BirdMenu = (props) => {
   const bird = props.bird;
 
   const [requiredAltitude, setRequiredAltitude] = useState(
-    Number(bird.altitude)
+    Number(bird.required.altitude)
   );
+
   const [requiredSpeed, setRequiredSpeed] = useState(Number(bird.speed));
   const setRequiredCommand = useBirdCommand();
 

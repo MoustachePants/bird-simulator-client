@@ -1,3 +1,11 @@
+.rotate90 {
+  rotate: 90deg;
+}
+
+.rotate-90 {
+  rotate: -90deg;
+}
+
 .context-menu-section {
 }
 
@@ -10,8 +18,9 @@
 
 .context-menu-section footer {
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -23,6 +32,9 @@
 
 .rangeInputContainer {
   width: 100%;
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
   position: relative;
 }
 
@@ -31,10 +43,23 @@
 }
 
 .rangeInputValueContainer {
-  background-color: red;
+  position: absolute;
+  width: calc(100% - 3rem);
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
 .rangeInputValue {
   position: absolute;
-  /*background-color: red;*/
+  color: var(--main-color);
+  background-color: #eaeaea;
+  border-radius: 100px;
+  width: 3rem;
+  text-align: center;
+  padding: 0.3rem 0.1rem;
+  font-weight: bold;
 }

@@ -1,6 +1,7 @@
 import "./DCHeader.css";
 
 import useIcon from "../../../hooks/useIcon.jsx";
+import bird from "../Bird.jsx";
 const DCHeader = (props) => {
   const closeIcon = useIcon("close");
 
@@ -10,7 +11,9 @@ const DCHeader = (props) => {
 
   return (
     <header className="DC-header">
-      <section>Pigeon #1 Eye View</section>
+      <section>
+        {props.birdName} #{props.birdTailNum} Eye View
+      </section>
       <button className="DC-close-button" onClick={closeDCHandler}>
         <img src={closeIcon} />
       </button>
