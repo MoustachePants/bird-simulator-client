@@ -1,24 +1,28 @@
 import "./BirdStatusPanel.css";
 
 import BirdStatus from "../BirdStatus/index.jsx";
+import useIcon from "../../../../../hooks/useIcon.jsx";
 
-const BirdStatusPanel = (props) => {
+const BirdStatusPanel = ({ bird }) => {
   return (
     <section className="bird-status-container">
       <div className="bird-status-group">
-        <BirdStatus type="speed" data={props.bird.speed} />
-        <BirdStatus
-          type="altitude"
-          data={props.bird.altitude.toFixed(
-            props.bird.altitude <= 100 ? 2 : props.bird.altitude <= 1000 ? 1 : 0
-          )}
-        />
+        <BirdStatus type="speed" data={bird.speed} />
+        <BirdStatus required type="speed" data={bird.required.speed} />
       </div>
       <div className="bird-status-group">
-        <BirdStatus type="bearing" data={props.bird.bearing} />
-        <BirdStatus type="hunger" data={153} />
+        <BirdStatus
+          type="altitude"
+          data={bird.altitude.toFixed(
+            bird.altitude <= 100 ? 2 : bird.altitude <= 1000 ? 1 : 0
+          )}
+        />
+        <BirdStatus required type="altitude" data={bird.required.altitude} />
       </div>
-      <BirdStatus type="position" data={props.bird.position} />
+
+      <BirdStatus type="bearing" data={bird.bearing} />
+      <BirdStatus type="hunger" data={153} />
+      <BirdStatus type="position" data={bird.position} />
     </section>
   );
 };

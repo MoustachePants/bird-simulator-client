@@ -3,8 +3,10 @@ import "./SideMenu.css";
 import BirdStatusPanel from "./StatusFrames/BirdStatusPanel/index.jsx";
 import TitledFrame from "../../UI/TitledFrame/index.jsx";
 import BirdProcessPanel from "./StatusFrames/BirdProcessPanel/index.jsx";
+import useIcon from "../../../hooks/useIcon.jsx";
 
 const SideMenu = (props) => {
+  const logo = useIcon("small-logo");
   const bird = props.birdData;
 
   return (
@@ -23,9 +25,9 @@ const SideMenu = (props) => {
         <TitledFrame title="Status">
           <BirdStatusPanel bird={bird} />
         </TitledFrame>
-        <TitledFrame title="On process">
-          <BirdProcessPanel bird={bird} />
-        </TitledFrame>
+        {/*<TitledFrame title="On process">*/}
+        {/*  <BirdProcessPanel bird={bird} />*/}
+        {/*</TitledFrame>*/}
       </section>
 
       {/*<section className="bird-status-current-commands">*/}

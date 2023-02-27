@@ -51,14 +51,16 @@ const Map = (props) => {
               selectedBirdTailNum={props.selectedBirdTailNum}
               onOpenBirdEyeView={props.onOpenBirdEyeView}
             />
-            <BirdFlyTo
-              position={bird.position}
-              requiredPosition={bird.required.position}
-            />
+            {bird.required.position.lat && (
+              <BirdFlyTo
+                position={bird.position}
+                requiredPosition={bird.required.position}
+              />
+            )}
           </div>
         ))}
       </LayerGroup>
-      <Entities />
+      <Entities display={props.entities} />
       {menuState.isOpen && (
         <DestinationContextMenu
           birds={birdsData}

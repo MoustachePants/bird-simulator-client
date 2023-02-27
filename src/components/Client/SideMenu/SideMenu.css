@@ -2,7 +2,6 @@
   background-color: rgba(17, 29, 33, 0.95);
   position: absolute;
   z-index: 10000;
-  right: 0;
   width: 19rem;
   height: calc(100% - 5rem);
   color: white;
