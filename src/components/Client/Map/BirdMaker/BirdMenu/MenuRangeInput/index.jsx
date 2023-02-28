@@ -26,6 +26,7 @@ const MenuRangeInput = (props) => {
             onChange={props.onRangeChange}
             min={props.minValue}
             max={props.maxValue}
+            step={props.step}
             className="rangeInput"
           />
           <div

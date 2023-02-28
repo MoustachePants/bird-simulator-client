@@ -1,4 +1,5 @@
 import useIcon from "./useIcon.jsx";
+import getDirectionFromBearing from "../utils/directionFromBearing.js";
 
 const useBirdStatus = (statusType, data) => {
   const status = { icon: null, content: null, unit: null };
@@ -16,7 +17,14 @@ const useBirdStatus = (statusType, data) => {
   }
 
   if (statusType === "bearing") {
-    status.content = data.toFixed(0) + "°";
+    const bearing = data.toFixed(0);
+    status.content = (
+      <div className="bird-status-bearing">
+        <section>{bearing + "°"}</section>
+        <section>{getDirectionFromBearing(bearing)}</section>
+      </div>
+    );
+
     // status.unit = "°";
   }
 

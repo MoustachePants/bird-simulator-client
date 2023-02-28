@@ -3,12 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  /*gap: 1rem;*/
 }
 
 .bird-status-group {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
   width: 100%;

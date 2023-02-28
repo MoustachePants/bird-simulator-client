@@ -72,6 +72,7 @@ const BirdMenu = (props) => {
           minValue={birdSpeedRange.min}
           maxValue={birdSpeedRange.max}
           onRangeChange={changeSpeedHandler}
+          step={1}
         />
         <MenuRangeInput
           title="Set Altitude"
@@ -80,6 +81,7 @@ const BirdMenu = (props) => {
           minValue={birdAltitudeRange.min}
           maxValue={birdAltitudeRange.max}
           onRangeChange={changeAltitudeHandler}
+          step={50}
         />
       </div>
     </Popup>

@@ -7,6 +7,8 @@ import closeIcon from "/icons/close-icon.png";
 import cameraIcon from "/icons/camera-icon.png";
 import routeIcon from "/icons/route-icon.png";
 import rightArrow from "/icons/right-arrow-icon.png";
+import doubleArrUp from "/icons/double-arrow-up.png";
+import doubleArrDown from "/icons/double-arrow-down.png";
 
 import birdIcon from "/birds/birdIcon.png";
 import beeIcon from "/birds/beeIcon.png";
@@ -25,6 +27,8 @@ const useIcon = (type) => {
   if (type === "camera") return cameraIcon;
   if (type === "route" || type === "path") return routeIcon;
   if (type === "right-arrow") return rightArrow;
+  if (type === "double-arrow-up") return doubleArrUp;
+  if (type === "double-arrow-down") return doubleArrDown;
 
   if (type === "bee") return beeIcon;
   if (type === "butterfly") return butterfly;

@@ -37,7 +37,7 @@ const Index = (props) => {
                         alt="bird-icon">
                     </div>
  
-                    ${bird.altitude.toFixed(
+                    ${Number(bird.altitude).toFixed(
                       props.bird.altitude <= 100
                         ? 2
                         : props.bird.altitude <= 1000

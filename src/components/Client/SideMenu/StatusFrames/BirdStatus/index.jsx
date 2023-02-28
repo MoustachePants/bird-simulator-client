@@ -1,6 +1,7 @@
 import "./BirdStatus.css";
 import useBirdStatus from "../../../../../hooks/useBirdStatus.jsx";
 import useIcon from "../../../../../hooks/useIcon.jsx";
+import { useEffect } from "react";
 
 const BirdStatus = (props) => {
   if (props.required && !props.data) return;
@@ -14,7 +15,11 @@ const BirdStatus = (props) => {
   return (
     <>
       {props.required && <img src={rightArrowIcon} className="arrow-icon" />}
-      <div className="bird-status">
+      <div
+        className={
+          props.required ? "bird-status bird-status-required" : "bird-status"
+        }
+      >
         <img className="status-icon" src={icon} />
         <div className="status-data">
           {content}
