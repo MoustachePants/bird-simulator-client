@@ -24,6 +24,9 @@ const BirdStatus = (props) => {
         <div className="status-data">
           {content}
           {unit && <div className="unit">{unit}</div>}
+          {props.required && statusType === "hunger" && (
+            <div className="unit">PerMinute</div>
+          )}
         </div>
       </div>
     </>

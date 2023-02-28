@@ -33,7 +33,6 @@ function App() {
       const fetchBirdsData = async () => {
         const res = await fetch(APIURL);
         const data = await res.json();
-        console.log(data);
         setBirdsData(data);
       };
 

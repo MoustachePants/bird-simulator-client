@@ -1,20 +1,20 @@
 import "./BirdMenu.css";
 
 import { Popup } from "react-leaflet";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import useIcon from "../../../../../hooks/useIcon.jsx";
 import useBirdCommand from "../../../../../hooks/useBirdCommand.jsx";
 import MenuRangeInput from "./MenuRangeInput/index.jsx";
-import birdFinder from "../../../../../utils/birdFinder.js";
 
-const BirdMenu = (props) => {
+const BirdMenu = ({ bird, onOpenBirdEyeView, position }) => {
   const speedIcon = useIcon("speed");
   const altIcon = useIcon("altitude");
   const birdEyeIcon = useIcon("camera");
-  const bird = props.bird;
+
+  console.log(bird.required);
 
   const [requiredAltitude, setRequiredAltitude] = useState(
-    Number(bird.required.altitude)
+    bird.required.altitude || bird.altitude
   );
 
   const [requiredSpeed, setRequiredSpeed] = useState(Number(bird.speed));
@@ -55,11 +55,11 @@ const BirdMenu = (props) => {
   }, []);
 
   const birdEyeButtonHandler = () => {
-    props.onOpenBirdEyeView(bird.tailNum);
+    onOpenBirdEyeView(bird.tailNum);
   };
 
   return (
-    <Popup position={props.position} closeButton={false} offset={[95, 110]}>
+    <Popup position={position} closeButton={false} offset={[95, 110]}>
       <div className="bird-menu-popup-container">
         <button className="openEyeViewButton" onClick={birdEyeButtonHandler}>
           <img src={birdEyeIcon} />

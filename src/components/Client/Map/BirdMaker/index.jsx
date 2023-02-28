@@ -3,10 +3,10 @@ import "./BirdMarker.css";
 import leaflet from "leaflet";
 import { Marker, Popup, Tooltip, useMapEvents } from "react-leaflet";
 import { useRef, useState } from "react";
-import BirdMenu from "./BirdMenu/BirdMenu.jsx";
+import BirdMenu from "./BirdMenu/index";
 import useIcon from "../../../../hooks/useIcon.jsx";
 
-const Index = (props) => {
+const BirdMarker = (props) => {
   const markerRef = useRef();
   const [menuState, setMenuState] = useState({
     isOpen: false,
@@ -38,9 +38,9 @@ const Index = (props) => {
                     </div>
  
                     ${Number(bird.altitude).toFixed(
-                      props.bird.altitude <= 100
+                      props.bird.altitude < 100
                         ? 2
-                        : props.bird.altitude <= 1000
+                        : props.bird.altitude < 1000
                         ? 1
                         : 0
                     )}
@@ -75,4 +75,4 @@ const Index = (props) => {
   );
 };
 
-export default Index;
+export default BirdMarker;

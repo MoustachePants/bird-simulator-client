@@ -13,14 +13,25 @@ const BirdStatusPanel = ({ bird }) => {
         <BirdStatus
           type="altitude"
           data={Number(bird.altitude).toFixed(
-            bird.altitude <= 100 ? 2 : bird.altitude <= 1000 ? 1 : 0
+            bird.altitude < 100 ? 2 : bird.altitude < 1000 ? 1 : 0
           )}
         />
         <BirdStatus required type="altitude" data={bird.required.altitude} />
       </div>
 
       <BirdStatus type="bearing" data={bird.bearing} />
-      <BirdStatus type="hunger" data={153} />
+
+      <div className="bird-status-group">
+        <BirdStatus
+          type="hunger"
+          data={Number(bird.calories.current).toFixed(0)}
+        />
+        <BirdStatus
+          required
+          type="hunger"
+          data={bird.calories.averageBurnedPerMinute}
+        />
+      </div>
       <BirdStatus type="position" data={bird.position} />
     </section>
   );
