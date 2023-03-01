@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { APIURL, intervalRate, runFrontInterval } from "../config.js";
 import birdFinder from "./utils/birdFinder.js";
 
-function App() {
+const App = () => {
   const [birdsData, setBirdsData] = useState([]);
   const [selectedBirdIndex, setSelectedBirdIndex] = useState(null);
   const [selectedEyeViewBirdIndex, setSelectedEyeViewBirdIndex] =
@@ -57,6 +57,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

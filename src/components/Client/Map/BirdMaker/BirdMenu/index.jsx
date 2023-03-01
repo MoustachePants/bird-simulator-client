@@ -11,8 +11,6 @@ const BirdMenu = ({ bird, onOpenBirdEyeView, position }) => {
   const altIcon = useIcon("altitude");
   const birdEyeIcon = useIcon("camera");
 
-  console.log(bird.required);
-
   const [requiredAltitude, setRequiredAltitude] = useState(
     bird.required.altitude || bird.altitude
   );

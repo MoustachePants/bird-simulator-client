@@ -1,10 +1,10 @@
 import useIcon from "./useIcon.jsx";
 import getDirectionFromBearing from "../utils/directionFromBearing.js";
 
-const useBirdStatus = (statusType, data) => {
+const useBirdStatus = (statusType, data, icon) => {
   const status = { icon: null, content: null, unit: null };
 
-  status.icon = useIcon(statusType);
+  status.icon = useIcon(icon || statusType);
 
   if (statusType === "speed") {
     status.content = data;
@@ -18,14 +18,8 @@ const useBirdStatus = (statusType, data) => {
 
   if (statusType === "bearing") {
     const bearing = data.toFixed(0);
-    status.content = (
-      <div className="bird-status-bearing">
-        <section>{bearing + "°"}</section>
-        <section>{getDirectionFromBearing(bearing)}</section>
-      </div>
-    );
-
-    // status.unit = "°";
+    status.content = bearing + "°";
+    status.unit = getDirectionFromBearing(bearing).toLocaleLowerCase();
   }
 
   if (statusType === "position") {
@@ -35,6 +29,11 @@ const useBirdStatus = (statusType, data) => {
   if (statusType === "hunger") {
     status.content = data;
     status.unit = "cal";
+  }
+
+  if (statusType === "average-hunger") {
+    status.content = data;
+    status.unit = "cpm";
   }
 
   return status;

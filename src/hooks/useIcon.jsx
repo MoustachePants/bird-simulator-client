@@ -21,7 +21,7 @@ const useIcon = (type) => {
   if (type === "speed") return speedIcon;
   if (type === "altitude") return altitudeIcon;
   if (type === "bearing") return bearingIcon;
-  if (type === "hunger") return hungerIcon;
+  if (type === "hunger" || type === "average-hunger") return hungerIcon;
   if (type === "position") return positionIcon;
   if (type === "close") return closeIcon;
   if (type === "camera") return cameraIcon;

@@ -10,12 +10,13 @@ const BirdStatus = (props) => {
   const statusType = props.type; // can be position, altitude, speed, bearing, hunger
   const data = props.data;
 
-  const { icon, content, unit } = useBirdStatus(statusType, data);
+  const { icon, content, unit } = useBirdStatus(statusType, data, props.icon);
 
   return (
     <>
       {props.required && <img src={rightArrowIcon} className="arrow-icon" />}
       <div
+        title={props.tooltip}
         className={
           props.required ? "bird-status bird-status-required" : "bird-status"
         }
@@ -24,9 +25,6 @@ const BirdStatus = (props) => {
         <div className="status-data">
           {content}
           {unit && <div className="unit">{unit}</div>}
-          {props.required && statusType === "hunger" && (
-            <div className="unit">PerMinute</div>
-          )}
         </div>
       </div>
     </>
