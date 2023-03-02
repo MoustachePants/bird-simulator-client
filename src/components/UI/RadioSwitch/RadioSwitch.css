@@ -1,0 +1,39 @@
+.radio-switch-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.radio-switch-container div {
+  overflow: hidden;
+  display: flex;
+  /*height: 2rem;*/
+}
+
+.radio-switch-container div input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.radio-switch-container div label {
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.radio-switch-container div input:checked + label {
+  background-color: #27363a;
+}
+
+.radio-switch-container div:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.radio-switch-container div:last-of-type {
+  border-radius: 0 4px 4px 0;
+}

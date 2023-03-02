@@ -8,8 +8,11 @@ import MapLayerControl from "./MapLayerControl/index.jsx";
 
 const Client = (props) => {
   const [entitiesFilter, setEntitiesFilter] = useState({
-    migrationPaths: false,
-    feedingAreas: true,
+    currentMap: "Water Color",
+    entities: {
+      migrationPaths: false,
+      feedingAreas: true,
+    },
   });
 
   return (

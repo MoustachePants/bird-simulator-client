@@ -1,43 +1,47 @@
 import "./MapLayerControl.css";
 
-import MapProperty from "./MapProperty/index.jsx";
-
-import useIcon from "../../../hooks/useIcon.jsx";
-import entities from "../Map/Entities/index.jsx";
+import RadioSwitch from "../../UI/RadioSwitch/index.jsx";
 
 const MapLayerControl = (props) => {
-  // const logo = useIcon("full-logo");
-
-  const filterMethod = (property) => {
+  const onMapSwitchChangeHandler = (value) => {
     props.setFilter((prev) => {
       const newState = { ...prev };
-      newState[property] = !newState[property];
+      newState.currentMap = value;
+      return newState;
+    });
+  };
+
+  const onFilterHandler = (property) => {
+    props.setFilter((prev) => {
+      const newState = { ...prev };
+      newState.entities[property] = !newState[property];
       return newState;
     });
   };
 
   return (
-    <header className="client-header-container">
-      {/*<section className="logo-container">*/}
-      {/*  <img src={logo} className="logo" />*/}
-      {/*</section>*/}
+    <div className="map-layer-control-container">
+      <RadioSwitch
+        options={["Water Color", "Satellite"]}
+        onChange={onMapSwitchChangeHandler}
+      />
       <section className="map-filter">
-        <MapProperty
-          title="Migration Paths"
-          property="migrationPaths"
-          onClick={filterMethod}
-          value={props.filter.migrationPaths}
-          icon="route"
-        />
-        <MapProperty
-          title="Feeding Areas"
-          property="feedingAreas"
-          onClick={filterMethod}
-          value={props.filter.feedingAreas}
-          icon="hunger"
-        />
+        {/*<MapProperty*/}
+        {/*  title="Migration Paths"*/}
+        {/*  property="migrationPaths"*/}
+        {/*  onClick={filterMethod}*/}
+        {/*  value={props.filter.migrationPaths}*/}
+        {/*  icon="route"*/}
+        {/*/>*/}
+        {/*<MapProperty*/}
+        {/*  title="Feeding Areas"*/}
+        {/*  property="feedingAreas"*/}
+        {/*  onClick={filterMethod}*/}
+        {/*  value={props.filter.feedingAreas}*/}
+        {/*  icon="hunger"*/}
+        {/*/>*/}
       </section>
-    </header>
+    </div>
   );
 };
 
