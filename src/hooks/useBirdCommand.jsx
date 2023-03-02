@@ -12,8 +12,12 @@ const useBirdCommand = () => {
   useEffect(() => {
     const commandBody = {
       tailNum: Number(requiredCommand.tailNum),
-      requiredAltitude: requiredCommand.altitude,
-      requiredSpeed: requiredCommand.speed,
+      requiredAltitude: requiredCommand.altitude
+        ? Number(requiredCommand.altitude)
+        : undefined,
+      requiredSpeed: requiredCommand.speed
+        ? Number(requiredCommand.speed)
+        : undefined,
       requiredPosition: requiredCommand.destination,
     };
 

@@ -15,12 +15,7 @@ const SideMenu = (props) => {
         <h1>{bird.name}</h1>
         <h2>#{bird.tailNum}</h2>
       </section>
-      <p className="bird-summery">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-        asperiores blanditiis culpa dicta dolor earum eius qui quod vel?
-        Accusamus alias commodi cupiditate dolore doloribus illum ipsa nam
-        nostrum.
-      </p>
+      <p className="bird-summery">{bird.summery}</p>
       <section className="status-frames">
         <TitledFrame title="Status">
           <BirdStatusPanel bird={bird} />

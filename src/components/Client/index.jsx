@@ -2,9 +2,9 @@ import "./client.css";
 
 import Map from "./Map";
 import SideMenu from "./SideMenu/index.jsx";
-import ClientHeader from "./ClientHeader/index.jsx";
 import Logo from "./Logo";
 import { useEffect, useState } from "react";
+import MapLayerControl from "./MapLayerControl/index.jsx";
 
 const Client = (props) => {
   const [entitiesFilter, setEntitiesFilter] = useState({
@@ -15,7 +15,7 @@ const Client = (props) => {
   return (
     <div className="client-container">
       <Logo />
-      {/*<ClientHeader setFilter={setEntitiesFilter} filter={entitiesFilter} />*/}
+      <MapLayerControl setFilter={setEntitiesFilter} filter={entitiesFilter} />
       {props.selectedBirdTailNum !== undefined && (
         <SideMenu birdData={props.birdsData[props.selectedBirdIndex]} />
       )}

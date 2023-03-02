@@ -1,11 +1,11 @@
-import "./ClientHeader.css";
+import "./MapLayerControl.css";
 
 import MapProperty from "./MapProperty/index.jsx";
 
 import useIcon from "../../../hooks/useIcon.jsx";
 import entities from "../Map/Entities/index.jsx";
 
-const ClientHeader = (props) => {
+const MapLayerControl = (props) => {
   // const logo = useIcon("full-logo");
 
   const filterMethod = (property) => {
@@ -41,4 +41,4 @@ const ClientHeader = (props) => {
   );
 };
 
-export default ClientHeader;
+export default MapLayerControl;

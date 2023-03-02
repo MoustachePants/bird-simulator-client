@@ -15,7 +15,9 @@ const BirdMenu = ({ bird, onOpenBirdEyeView, position }) => {
     bird.required.altitude || bird.altitude
   );
 
-  const [requiredSpeed, setRequiredSpeed] = useState(Number(bird.speed));
+  const [requiredSpeed, setRequiredSpeed] = useState(
+    bird.required.speed || bird.speed
+  );
   const setRequiredCommand = useBirdCommand();
 
   const birdSpeedRange = bird.limits.speed;
