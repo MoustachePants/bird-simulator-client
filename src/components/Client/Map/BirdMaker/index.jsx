@@ -29,7 +29,7 @@ const BirdMarker = (props) => {
                    ? "bird-map-icon-selected bird-map-icon"
                    : "bird-map-icon"
                }
-               }>
+               >
                     <img 
                         style="transform: rotate(${bird.bearing}deg);"
                         class="bird-map-icon-img" 

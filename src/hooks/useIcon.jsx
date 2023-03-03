@@ -10,6 +10,9 @@ import rightArrow from "/icons/right-arrow-icon.png";
 import doubleArrUp from "/icons/double-arrow-up.png";
 import doubleArrDown from "/icons/double-arrow-down.png";
 import layersIcon from "/icons/layers-icon.png";
+import pinDropIcon from "/icons/pin-drop-icon.png";
+import distanceIcon from "/icons/distance-icon.png";
+import locationIcon from "/icons/location-icon.png";
 
 import birdIcon from "/birds/birdIcon.png";
 import beeIcon from "/birds/beeIcon.png";
@@ -31,6 +34,9 @@ const useIcon = (type) => {
   if (type === "double-arrow-up") return doubleArrUp;
   if (type === "double-arrow-down") return doubleArrDown;
   if (type === "layers") return layersIcon;
+  if (type === "pin-drop") return pinDropIcon;
+  if (type === "distance") return distanceIcon;
+  if (type === "location") return locationIcon;
 
   if (type === "bee") return beeIcon;
   if (type === "butterfly") return butterfly;
