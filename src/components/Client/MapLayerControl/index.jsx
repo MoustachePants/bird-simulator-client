@@ -4,7 +4,7 @@ import RadioSwitch from "../../UI/RadioSwitch/index.jsx";
 
 const MapLayerControl = (props) => {
   const onMapSwitchChangeHandler = (value) => {
-    props.setFilter((prev) => {
+    props.onSelectProperties((prev) => {
       const newState = { ...prev };
       newState.currentMap = value;
       return newState;
@@ -12,7 +12,7 @@ const MapLayerControl = (props) => {
   };
 
   const onFilterHandler = (property) => {
-    props.setFilter((prev) => {
+    props.onSelectProperties((prev) => {
       const newState = { ...prev };
       newState.entities[property] = !newState[property];
       return newState;
@@ -24,6 +24,7 @@ const MapLayerControl = (props) => {
       <RadioSwitch
         options={["Water Color", "Satellite"]}
         onChange={onMapSwitchChangeHandler}
+        checked={props.properties.currentMap}
       />
       <section className="map-filter">
         {/*<MapProperty*/}

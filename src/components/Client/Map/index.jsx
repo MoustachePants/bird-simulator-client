@@ -8,6 +8,7 @@ import MapEvents from "./MapEvents.jsx";
 import DestinationContextMenu from "./DestinationContextMenu/index.jsx";
 import BirdFlyTo from "./BirdFlyTo/index.jsx";
 import Entities from "./Entities/index.jsx";
+import Tiles from "./Tiles/index.jsx";
 
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
@@ -31,11 +32,7 @@ const Map = (props) => {
       maxZoom={15}
     >
       {/*<ZoomControl position="topright" />*/}
-      <TileLayer // ! if I upload online I should add the attribution!
-        // attribution='Index tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Index data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}"
-        ext="jpg"
-      />
+      <Tiles selectedTile={props.properties.currentMap} />
       <MapEvents onContextMenu={setMenuState} onDeSelect={selectBirdHandler} />
       <LayerGroup>
         {birdsData.map((bird) => (
@@ -55,7 +52,7 @@ const Map = (props) => {
           </div>
         ))}
       </LayerGroup>
-      <Entities display={props.entities} />
+      <Entities display={props.properties} />
       {menuState.isOpen && (
         <DestinationContextMenu
           birds={birdsData}

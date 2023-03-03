@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import MapLayerControl from "./MapLayerControl/index.jsx";
 
 const Client = (props) => {
-  const [entitiesFilter, setEntitiesFilter] = useState({
+  const [mapProperties, setMapProperties] = useState({
     currentMap: "Water Color",
     entities: {
       migrationPaths: false,
@@ -18,7 +18,10 @@ const Client = (props) => {
   return (
     <div className="client-container">
       <Logo />
-      <MapLayerControl setFilter={setEntitiesFilter} filter={entitiesFilter} />
+      <MapLayerControl
+        onSelectProperties={setMapProperties}
+        properties={mapProperties}
+      />
       {props.selectedBirdTailNum !== undefined && (
         <SideMenu birdData={props.birdsData[props.selectedBirdIndex]} />
       )}
@@ -28,7 +31,7 @@ const Client = (props) => {
           onSelectBird={props.onSelectBird}
           selectedBirdTailNum={props.selectedBirdTailNum}
           onOpenBirdEyeView={props.onOpenBirdEyeView}
-          entities={entitiesFilter}
+          properties={mapProperties}
         />
       </main>
       {/*<footer>this is the footer</footer>*/}

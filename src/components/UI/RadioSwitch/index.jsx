@@ -1,6 +1,6 @@
 import "./RadioSwitch.css";
 
-const RadioSwitch = ({ options, onChange }) => {
+const RadioSwitch = ({ options, onChange, checked }) => {
   const onChangeHandler = (event) => {
     onChange(event.target.value);
   };
@@ -15,6 +15,7 @@ const RadioSwitch = ({ options, onChange }) => {
             id={option + "-radio-button"}
             name="map-switch"
             onChange={onChangeHandler}
+            checked={checked === option}
           />
           <label htmlFor={option + "-radio-button"}>{option}</label>
         </div>
