@@ -9,6 +9,7 @@ import routeIcon from "/icons/route-icon.png";
 import rightArrow from "/icons/right-arrow-icon.png";
 import doubleArrUp from "/icons/double-arrow-up.png";
 import doubleArrDown from "/icons/double-arrow-down.png";
+import layersIcon from "/icons/layers-icon.png";
 
 import birdIcon from "/birds/birdIcon.png";
 import beeIcon from "/birds/beeIcon.png";
@@ -29,6 +30,7 @@ const useIcon = (type) => {
   if (type === "right-arrow") return rightArrow;
   if (type === "double-arrow-up") return doubleArrUp;
   if (type === "double-arrow-down") return doubleArrDown;
+  if (type === "layers") return layersIcon;
 
   if (type === "bee") return beeIcon;
   if (type === "butterfly") return butterfly;

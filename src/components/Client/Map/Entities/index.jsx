@@ -6,8 +6,8 @@ const Entities = (props) => {
   return (
     <>
       <LayerGroup>
-        {props.display.feedingAreas && <FeedingAreas />}
-        {props.display.migrationPaths && <MigrationPaths />}
+        {props.display.feedingAreas.display && <FeedingAreas />}
+        {props.display.migrationPaths.display && <MigrationPaths />}
       </LayerGroup>
     </>
   );

@@ -1,17 +1,37 @@
 .map-layer-control-container {
   position: absolute;
   z-index: 10000;
+  right: 1rem;
+  top: 1rem;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.map-layer-control {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  right: 1rem;
-  top: 4rem;
-  background-color: rgba(23, 231, 41, 0.62);
+  padding: 0.5rem;
 }
 
 .map-filter {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.map-entity-checkbox-container {
+  display: flex;
+  gap: 0.3rem;
+  /*align-items: center;*/
+}
+
+.layers-icon {
+  filter: invert();
+  width: 2.5rem;
 }

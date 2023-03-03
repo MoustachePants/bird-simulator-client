@@ -10,8 +10,8 @@ const Client = (props) => {
   const [mapProperties, setMapProperties] = useState({
     currentMap: "Water Color",
     entities: {
-      migrationPaths: false,
-      feedingAreas: true,
+      migrationPaths: { name: "Migration Paths", display: false },
+      feedingAreas: { name: "Feeding Areas", display: true },
     },
   });
 

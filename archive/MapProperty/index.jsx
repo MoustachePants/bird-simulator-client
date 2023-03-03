@@ -1,6 +1,6 @@
 import "./MapProperty.css";
 import { useState } from "react";
-import useIcon from "../../../../hooks/useIcon.jsx";
+import useIcon from "../../src/hooks/useIcon.jsx";
 
 const MapProperty = (props) => {
   const [checked, setChecked] = useState(props.value);
