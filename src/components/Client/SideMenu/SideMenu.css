@@ -1,5 +1,5 @@
 .side-menu-container {
-  background-color: rgba(17, 29, 33, 0.95);
+  background-color: var(--main-color);
   position: absolute;
   z-index: 10000;
   width: 19rem;

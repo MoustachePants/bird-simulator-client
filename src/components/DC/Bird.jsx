@@ -16,7 +16,7 @@ const Bird = (props) => {
     );
   });
 
-  const birdAltitude = -2.9 + props.altitude / 1000; // used to calibrate the altitude
+  const birdAltitude = -2.6 + props.altitude / 1000; // used to calibrate the altitude
 
   return (
     // <Box

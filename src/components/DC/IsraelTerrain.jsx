@@ -4,10 +4,9 @@ import { TextureLoader } from "three/src/loaders/TextureLoader.js";
 import { useEffect, useRef } from "react";
 
 const IsraelTerrain = () => {
-  const elevation = useLoader(TextureLoader, "/DC/israelHeightMap.png");
-  const normalMap = useLoader(TextureLoader, "/DC/NormalMap.png");
-  const map = useLoader(TextureLoader, "/DC/israelSized.jpg");
-  // const map2 = useLoader(TextureLoader, "/DC/north-israel.jpg");
+  const elevation = useLoader(TextureLoader, "/DC/israel-height-map-new.png");
+  const normalMap = useLoader(TextureLoader, "/DC/normalMap.png");
+  const map = useLoader(TextureLoader, "/DC/north-israel-orthophoto.png");
 
   const planeRef = useRef(null);
 
