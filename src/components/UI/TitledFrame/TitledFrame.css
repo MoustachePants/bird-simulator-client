@@ -1,5 +1,9 @@
-.titled-frame {
-  border: var(--button-hover-border-color-default) solid 1px;
-  border-radius: 8px;
+.titled-frame-container {
   padding: 0.5rem;
+  border-radius: 8px;
+  border: var(--button-hover-border-color-default) solid 1px;
+}
+
+.titled-frame-container legend {
+  padding: 0 1rem;
 }

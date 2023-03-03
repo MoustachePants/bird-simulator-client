@@ -1,6 +1,7 @@
 import "./MapLayerControl.css";
 
 import RadioSwitch from "../../UI/RadioSwitch/index.jsx";
+import MapProperty from "./MapProperty/index.jsx";
 
 const MapLayerControl = (props) => {
   const onMapSwitchChangeHandler = (value) => {
@@ -27,18 +28,20 @@ const MapLayerControl = (props) => {
         checked={props.properties.currentMap}
       />
       <section className="map-filter">
+        <h4>Properties</h4>
+
         {/*<MapProperty*/}
         {/*  title="Migration Paths"*/}
         {/*  property="migrationPaths"*/}
-        {/*  onClick={filterMethod}*/}
-        {/*  value={props.filter.migrationPaths}*/}
+        {/*  onClick={onFilterHandler}*/}
+        {/*  value={props.properties.entities.migrationPaths}*/}
         {/*  icon="route"*/}
         {/*/>*/}
         {/*<MapProperty*/}
         {/*  title="Feeding Areas"*/}
         {/*  property="feedingAreas"*/}
-        {/*  onClick={filterMethod}*/}
-        {/*  value={props.filter.feedingAreas}*/}
+        {/*  onClick={onFilterHandler}*/}
+        {/*  value={props.properties.entities.feedingAreas}*/}
         {/*  icon="hunger"*/}
         {/*/>*/}
       </section>

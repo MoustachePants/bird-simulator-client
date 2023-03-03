@@ -52,7 +52,7 @@ const Map = (props) => {
           </div>
         ))}
       </LayerGroup>
-      <Entities display={props.properties} />
+      <Entities display={props.properties.entities} />
       {menuState.isOpen && (
         <DestinationContextMenu
           birds={birdsData}
