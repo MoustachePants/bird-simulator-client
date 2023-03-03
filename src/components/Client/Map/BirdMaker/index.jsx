@@ -1,7 +1,7 @@
 import "./BirdMarker.css";
 
 import leaflet from "leaflet";
-import { Marker, Popup, Tooltip, useMapEvents } from "react-leaflet";
+import { Marker } from "react-leaflet";
 import { useRef, useState } from "react";
 import BirdMenu from "./BirdMenu/index";
 import useIcon from "../../../../hooks/useIcon.jsx";
@@ -22,7 +22,7 @@ const BirdMarker = (props) => {
         position={[bird.position.lat, bird.position.lng]}
         icon={leaflet.divIcon({
           iconSize: [90, 60],
-          iconAnchor: [30, 50],
+          iconAnchor: [44, 48],
           html: `<div class="bird-map-icon-container">
                <div class=${
                  props.selectedBirdTailNum === bird.tailNum
@@ -36,7 +36,8 @@ const BirdMarker = (props) => {
                         src='${markerIcon}'
                         alt="bird-icon">
                     </div>
- 
+                    <div class="bird-map-icon-properties">
+                    <h4 class="bird-map-icon-name">${bird.name}</h4>
                     ${Number(bird.altitude).toFixed(
                       props.bird.altitude < 100
                         ? 2
@@ -44,11 +45,10 @@ const BirdMarker = (props) => {
                         ? 1
                         : 0
                     )}
+                    </div>
+
                 </div>`,
         })}
-        // rotationAngle={bird.heading}
-        // rotationOrigin={"center"}
-        style="transform: rotate(80deg);"
         key={Math.random()}
         ref={markerRef}
         eventHandlers={{
