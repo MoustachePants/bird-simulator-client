@@ -23,7 +23,10 @@ const Client = (props) => {
         properties={mapProperties}
       />
       {props.selectedBirdTailNum !== undefined && (
-        <SideMenu birdData={props.birdsData[props.selectedBirdIndex]} />
+        <SideMenu
+          birdData={props.birdsData[props.selectedBirdIndex]}
+          onExit={props.onSelectBird}
+        />
       )}
       <main>
         <Map

@@ -9,6 +9,15 @@
   overflow-y: hidden;
 }
 
+.side-menu-exit {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  filter: invert();
+  width: 2rem;
+  cursor: pointer;
+}
+
 .side-menu-header {
   display: flex;
   justify-content: space-between;

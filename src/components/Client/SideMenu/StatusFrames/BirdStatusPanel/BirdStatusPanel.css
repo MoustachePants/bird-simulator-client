@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /*gap: 1rem;*/
+  gap: 1rem;
 }
 
 .bird-status-group {
