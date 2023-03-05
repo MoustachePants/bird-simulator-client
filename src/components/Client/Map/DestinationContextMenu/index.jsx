@@ -1,6 +1,5 @@
 import "./DestinationContextMenu.css";
 
-import { APIURL } from "../../../../../config.js";
 import { Popup, useMap } from "react-leaflet";
 import useIcon from "../../../../hooks/useIcon.jsx";
 import useBirdCommand from "../../../../hooks/useBirdCommand.jsx";

@@ -9,12 +9,12 @@
 .context-menu-section {
 }
 
-.context-menu-section header {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
+/*.context-menu-section header {*/
+/*  display: flex;*/
+/*  gap: 0.5rem;*/
+/*  align-items: center;*/
+/*  margin-bottom: 0.5rem;*/
+/*}*/
 
 .context-menu-section footer {
   display: flex;
@@ -24,11 +24,11 @@
   margin-bottom: 0.5rem;
 }
 
-.context-menu-icon {
-  filter: invert();
-  aspect-ratio: 1;
-  width: 1rem;
-}
+/*.context-menu-icon {*/
+/*  filter: invert();*/
+/*  aspect-ratio: 1;*/
+/*  width: 1rem;*/
+/*}*/
 
 .rangeInputContainer {
   width: 100%;

@@ -1,7 +1,7 @@
 import "leaflet/dist/leaflet.css";
 import "./Map.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LayerGroup, MapContainer, TileLayer } from "react-leaflet";
 import BirdMarker from "./BirdMaker/";
 import MapEvents from "./MapEvents.jsx";
@@ -9,13 +9,25 @@ import DestinationContextMenu from "./DestinationContextMenu/index.jsx";
 import BirdFlyTo from "./BirdFlyTo/index.jsx";
 import Entities from "./Entities/index.jsx";
 import Tiles from "./Tiles/index.jsx";
+import { APIURL } from "../../../../config.js";
 
 const Map = (props) => {
   const [menuState, setMenuState] = useState({
     isOpen: false,
     position: { lat: 0, lng: 0 },
   });
+  const [entities, setEntities] = useState();
   const birdsData = props.birdsData;
+
+  useEffect(() => {
+    const fetchEntitiesFromServer = async () => {
+      const res = await fetch(APIURL + "entities");
+      const data = await res.json();
+      setEntities(data);
+    };
+
+    fetchEntitiesFromServer();
+  }, []);
 
   const selectBirdHandler = (tailNum) => {
     props.onSelectBird(tailNum);
@@ -52,7 +64,9 @@ const Map = (props) => {
           </div>
         ))}
       </LayerGroup>
-      <Entities display={props.properties.entities} />
+      {entities && (
+        <Entities display={props.properties.entities} entities={entities} />
+      )}
       {menuState.isOpen && (
         <DestinationContextMenu
           birds={birdsData}
