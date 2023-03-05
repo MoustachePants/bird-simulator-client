@@ -21,7 +21,8 @@
 }
 
 .DC-close-button:hover {
-  border: var(--button-hover-border-color-default) solid 1px;
+  /*border: var(--button-hover-border-color-default) solid 1px;*/
+  border-color: transparent;
 }
 
 .DC-close-button:focus {

@@ -19,7 +19,8 @@ const DC = (props) => {
       />
       <div className="canvas-container">
         <Canvas>
-          <pointLight intensity={2} position={[7, 5, 1]} />
+          <pointLight intensity={0.03} position={[7, 5, 1]} />
+          <ambientLight intensity={0.6} />
           <Sky sunPosition={[7, 5, 1]} />
           <fog attach="fog" args={["white", 0, 100]} />
           <Bird

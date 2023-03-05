@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 
 const IsraelTerrain = () => {
   const elevation = useLoader(TextureLoader, "/DC/israel-height-map-new.png");
-  const normalMap = useLoader(TextureLoader, "/DC/normalMap.png");
+  const normalMap = useLoader(TextureLoader, "/DC/normal-map.png");
   const map = useLoader(TextureLoader, "/DC/north-israel-orthophoto.png");
 
   const planeRef = useRef(null);
@@ -21,8 +21,8 @@ const IsraelTerrain = () => {
         attach="material"
         color="white"
         map={map}
-        metalness={1}
         normalMap={normalMap}
+        normalScale={1}
         displacementMap={elevation}
         displacementScale={3}
       />
