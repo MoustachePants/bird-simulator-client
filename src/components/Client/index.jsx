@@ -33,6 +33,7 @@ const Client = (props) => {
           birdsData={props.birdsData}
           onSelectBird={props.onSelectBird}
           selectedBirdTailNum={props.selectedBirdTailNum}
+          selectedBirdIndex={props.selectedBirdIndex}
           onOpenBirdEyeView={props.onOpenBirdEyeView}
           properties={mapProperties}
         />

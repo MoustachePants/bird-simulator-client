@@ -43,7 +43,6 @@ const Map = (props) => {
       minZoom={5}
       maxZoom={15}
     >
-      {/*<ZoomControl position="topright" />*/}
       <Tiles selectedTile={props.properties.currentMap} />
       <MapEvents onContextMenu={setMenuState} onDeSelect={selectBirdHandler} />
       <LayerGroup>
@@ -71,7 +70,7 @@ const Map = (props) => {
         <DestinationContextMenu
           birds={birdsData}
           position={menuState.position}
-          afterUse={setMenuState}
+          selectedBird={birdsData[props.selectedBirdIndex]}
         />
       )}
     </MapContainer>
