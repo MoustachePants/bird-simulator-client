@@ -12,10 +12,6 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.bird-status-group .bird-status {
-  /*width: unset;*/
-}
-
 .arrow-icon {
   filter: invert();
   aspect-ratio: 1;
@@ -33,7 +29,6 @@
   display: flex;
   align-items: baseline;
   gap: 0.2rem;
-  /*font-size: 1rem;*/
   width: 100%;
 }
 

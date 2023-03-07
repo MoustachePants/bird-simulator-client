@@ -3,7 +3,7 @@ import "./client.css";
 import Map from "./Map";
 import SideMenu from "./SideMenu/index.jsx";
 import Logo from "./Logo";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MapLayerControl from "./MapLayerControl/index.jsx";
 
 const Client = (props) => {
@@ -38,7 +38,6 @@ const Client = (props) => {
           properties={mapProperties}
         />
       </main>
-      {/*<footer>this is the footer</footer>*/}
     </div>
   );
 };

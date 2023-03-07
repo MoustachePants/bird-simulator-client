@@ -13,12 +13,12 @@ const App = () => {
     useState(null);
 
   const selectBirdHandler = (tailNum) => {
-    const { bird, birdIndex } = birdFinder(birdsData, tailNum);
+    const { birdIndex } = birdFinder(birdsData, tailNum);
     setSelectedBirdIndex(birdIndex);
   };
 
   const openBirdEyeView = (tailNum) => {
-    const { bird, birdIndex } = birdFinder(birdsData, tailNum);
+    const { birdIndex } = birdFinder(birdsData, tailNum);
     setSelectedEyeViewBirdIndex(birdIndex);
   };
 

@@ -24,17 +24,7 @@ const SideMenu = (props) => {
         <TitledFrame title="Status">
           <BirdStatusPanel bird={bird} />
         </TitledFrame>
-        {/*<TitledFrame title="On process">*/}
-        {/*  <BirdProcessPanel bird={bird} />*/}
-        {/*</TitledFrame>*/}
       </section>
-
-      {/*<section className="bird-status-current-commands">*/}
-      {/*  <ul>*/}
-      {/*    <li>height 100 to 1000</li>*/}
-      {/*    <li>velocity 50 to 70</li>*/}
-      {/*  </ul>*/}
-      {/*</section>*/}
     </div>
   );
 };

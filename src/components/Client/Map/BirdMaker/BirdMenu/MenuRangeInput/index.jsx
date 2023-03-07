@@ -1,5 +1,4 @@
 import "./MenuRangeInput.css";
-import { useRef, useState } from "react";
 import normalizeToPercentage from "/src/utils/normalizeToPercentage";
 import TitledFrame from "../../../../../UI/TitledFrame/index.jsx";
 
@@ -8,10 +7,6 @@ const MenuRangeInput = (props) => {
 
   return (
     <div className="context-menu-section">
-      {/*<header>*/}
-      {/*  <img className="context-menu-icon" src={props.icon} />*/}
-      {/*  <h4>{props.title}</h4>*/}
-      {/*</header>*/}
       <TitledFrame title={props.title} icon={props.icon}>
         <footer
           className={ifHorizontal ? "rotate-90" : ""}

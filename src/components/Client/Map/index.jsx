@@ -2,7 +2,7 @@ import "leaflet/dist/leaflet.css";
 import "./Map.css";
 
 import { useEffect, useState } from "react";
-import { LayerGroup, MapContainer, TileLayer } from "react-leaflet";
+import { LayerGroup, MapContainer } from "react-leaflet";
 import BirdMarker from "./BirdMaker/";
 import MapEvents from "./MapEvents.jsx";
 import DestinationContextMenu from "./DestinationContextMenu/index.jsx";

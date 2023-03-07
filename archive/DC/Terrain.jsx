@@ -1,9 +1,9 @@
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
-import { math } from "../../utils/math";
+import { math } from "../math.js";
 import { useEffect, useRef, useState } from "react";
 
-import perlin from "../../utils/perlin.js";
+import perlin from "../perlin.js";
 import * as THREE from "three";
 // import * as dat from "dat.gui";
 

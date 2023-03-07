@@ -1,6 +1,6 @@
 import "./BirdProcessPanel.css";
 
-import BirdStatus from "../BirdStatus/index.jsx";
+import BirdStatus from "../../src/components/Client/SideMenu/StatusFrames/BirdStatus/index.jsx";
 
 const BirdProcessPanel = (props) => {
   return (

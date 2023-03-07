@@ -3,7 +3,7 @@ import "./DC.css";
 
 import { Canvas } from "@react-three/fiber";
 import IsraelTerrain from "./IsraelTerrain.jsx";
-import { Sky, Box } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import Bird from "./Bird.jsx";
 import DCHeader from "./DCHeader/index.jsx";
 

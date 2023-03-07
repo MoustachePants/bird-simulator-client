@@ -28,7 +28,6 @@
 .map-entity-checkbox-container {
   display: flex;
   gap: 0.3rem;
-  /*align-items: center;*/
 }
 
 .layers-icon {

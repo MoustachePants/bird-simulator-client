@@ -6,7 +6,6 @@
 .radio-switch-container div {
   overflow: hidden;
   display: flex;
-  /*height: 2rem;*/
 }
 
 .radio-switch-container div input {

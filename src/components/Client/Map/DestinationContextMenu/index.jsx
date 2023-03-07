@@ -20,25 +20,6 @@ const DestinationContextMenu = (props) => {
   };
 
   return (
-    // <Popup position={props.position} closeButton={false} offset={[95, 110]}>
-    //   <div className="popup-container">
-    //     <header className="popup-header">
-    //       <img className="context-menu-icon" src={icon} />
-    //       <h4>Set Destination</h4>
-    //     </header>
-    //
-    //     {props.birds.map((bird) => (
-    //       <button
-    //         className="context-menu-bird-destination-button"
-    //         onClick={menuSendCommandHandler}
-    //         data-tailnum={bird.tailNum}
-    //         key={bird.tailNum}
-    //       >
-    //         {bird.name} #{bird.tailNum}
-    //       </button>
-    //     ))}
-    //   </div>
-    // </Popup>
     <Popup position={props.position} closeButton={false} offset={[95, 110]}>
       <div className="popup-container">
         {bird && (

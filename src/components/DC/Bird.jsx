@@ -19,12 +19,6 @@ const Bird = (props) => {
   const birdAltitude = -2.5 + props.altitude / 1000; // used to calibrate the altitude
 
   return (
-    // <Box
-    //   args={[0.1, 0.1, 0.1]}
-    //   material-color="red"
-    //   position={[birdPosition.x, birdAltitude, birdPosition.y]}
-    // />
-
     //   ! BUG - The camera doesn't stay on the right spot when unlocking && cant lock sometimes
     //   ! i found this discussion about it: https://discourse.threejs.org/t/how-to-avoid-pointerlockcontrols-error/33017/3
 

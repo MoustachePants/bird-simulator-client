@@ -1,7 +1,7 @@
 import "./DCHeader.css";
 
 import useIcon from "../../../hooks/useIcon.jsx";
-import bird from "../Bird.jsx";
+
 const DCHeader = (props) => {
   const closeIcon = useIcon("close");
 

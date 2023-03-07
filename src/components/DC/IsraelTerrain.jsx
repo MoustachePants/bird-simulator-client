@@ -1,7 +1,7 @@
 import { Plane } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const IsraelTerrain = () => {
   const elevation = useLoader(TextureLoader, "/DC/israel-height-map-new.png");

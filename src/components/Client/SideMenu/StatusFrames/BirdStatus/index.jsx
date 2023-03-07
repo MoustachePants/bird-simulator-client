@@ -1,7 +1,6 @@
 import "./BirdStatus.css";
 import useBirdStatus from "../../../../../hooks/useBirdStatus.jsx";
 import useIcon from "../../../../../hooks/useIcon.jsx";
-import { useEffect } from "react";
 
 const BirdStatus = (props) => {
   if (props.required && !props.data) return;

@@ -31,10 +31,6 @@
   margin-bottom: 2rem;
 }
 
-.bird-status-container {
-  /*border: white solid 1px;*/
-}
-
 .status-frames {
   display: flex;
   flex-direction: column;
