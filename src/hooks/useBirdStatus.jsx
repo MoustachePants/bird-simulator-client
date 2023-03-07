@@ -17,13 +17,13 @@ const useBirdStatus = (statusType, data, icon) => {
   }
 
   if (statusType === "bearing") {
-    const bearing = data.toFixed(0);
+    const bearing = Number(data).toFixed(0);
     status.content = bearing + "°";
     status.unit = getDirectionFromBearing(bearing).toLocaleLowerCase();
   }
 
   if (statusType === "position") {
-    status.content = data.lat.toFixed(6) + ", " + data.lng.toFixed(6);
+    status.content = Number(data.lat).toFixed(6) + ", " + data.lng.toFixed(6);
   }
 
   if (statusType === "hunger") {
