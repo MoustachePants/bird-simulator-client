@@ -7,15 +7,24 @@ import TitledFrame from "../../../UI/TitledFrame/index.jsx";
 
 const DestinationContextMenu = (props) => {
   const sendCommand = useBirdCommand();
-  const icon = useIcon("position");
+  const locationIcon = useIcon("position");
+  const addLocationIcon = useIcon("add-location");
   const map = useMap();
   const bird = props.selectedBird;
 
-  const menuSendCommandHandler = (event) => {
+  const menuSendDestinationCommandHandler = (event) => {
     event.preventDefault();
     const tailNum = bird.tailNum;
     const destination = props.position;
     sendCommand({ tailNum, destination });
+    map.closePopup();
+  };
+
+  const menuSendRouteDestinationCommandHandler = (event) => {
+    event.preventDefault();
+    const tailNum = bird.tailNum;
+    const routeDestination = props.position;
+    sendCommand({ tailNum, routeDestination });
     map.closePopup();
   };
 
@@ -26,11 +35,20 @@ const DestinationContextMenu = (props) => {
           <TitledFrame title={bird.name + " #" + bird.tailNum}>
             <button
               className="context-menu-bird-destination-button"
-              onClick={menuSendCommandHandler}
+              onClick={menuSendDestinationCommandHandler}
             >
               <header className="popup-header">
-                <img className="context-menu-icon" src={icon} />
+                <img className="context-menu-icon" src={locationIcon} />
                 <h4>Set Destination</h4>
+              </header>
+            </button>
+            <button
+              className="context-menu-bird-destination-button"
+              onClick={menuSendRouteDestinationCommandHandler}
+            >
+              <header className="popup-header">
+                <img className="context-menu-icon" src={addLocationIcon} />
+                <h4>Add to route</h4>
               </header>
             </button>
           </TitledFrame>
@@ -41,6 +59,12 @@ const DestinationContextMenu = (props) => {
               <header className="popup-header">
                 <img className="context-menu-icon" src={icon} />
                 <h4>Set Destination</h4>
+              </header>
+            </button>
+            <button className="context-menu-bird-destination-button button-unusable">
+              <header className="popup-header">
+                <img className="context-menu-icon" src={addLocationIcon} />
+                <h4>Add to route</h4>
               </header>
             </button>
           </TitledFrame>

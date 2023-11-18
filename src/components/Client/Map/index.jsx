@@ -54,10 +54,10 @@ const Map = (props) => {
               selectedBirdTailNum={props.selectedBirdTailNum}
               onOpenBirdEyeView={props.onOpenBirdEyeView}
             />
-            {bird.required.position.lat && (
+            {bird.required.position[0].lat && (
               <BirdFlyTo
                 position={bird.position}
-                requiredPosition={bird.required.position}
+                requiredRoute={bird.required.position}
               />
             )}
           </div>

@@ -7,6 +7,7 @@ const useBirdCommand = () => {
     speed: null,
     altitude: null,
     destination: { lat: null, lng: null },
+    routeDestination: { lat: null, lng: null },
   });
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const useBirdCommand = () => {
         ? Number(requiredCommand.speed)
         : undefined,
       requiredPosition: requiredCommand.destination,
+      requiredRoutePosition: requiredCommand.routeDestination,
     };
 
     if (commandBody.tailNum) {

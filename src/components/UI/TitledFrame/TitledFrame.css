@@ -16,3 +16,9 @@
   width: 1rem;
   height: 1rem;
 }
+
+.titled-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

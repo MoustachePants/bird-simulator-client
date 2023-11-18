@@ -13,6 +13,7 @@ import layersIcon from "/icons/layers-icon.png";
 import pinDropIcon from "/icons/pin-drop-icon.png";
 import distanceIcon from "/icons/distance-icon.png";
 import locationIcon from "/icons/location-icon.png";
+import addLocationIcon from "/icons/add-location-icon.png";
 
 import birdIcon from "/birds/birdIcon.png";
 import beeIcon from "/birds/beeIcon.png";
@@ -37,6 +38,7 @@ const useIcon = (type) => {
   if (type === "pin-drop") return pinDropIcon;
   if (type === "distance") return distanceIcon;
   if (type === "location") return locationIcon;
+  if (type === "add-location") return addLocationIcon;
 
   if (type === "bee") return beeIcon;
   if (type === "butterfly") return butterfly;
