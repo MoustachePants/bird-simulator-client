@@ -36,7 +36,7 @@ const BirdFlyTo = (props) => {
           if (i === 0) return;
 
           return (
-            <>
+            <div key={Math.}>
               <Polyline
                 positions={[
                   [
@@ -57,7 +57,7 @@ const BirdFlyTo = (props) => {
                 opacity={0.4}
                 key={Math.random()}
               />
-            </>
+            </div>
           );
         })}
     </>

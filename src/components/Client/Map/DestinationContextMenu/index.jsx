@@ -57,7 +57,7 @@ const DestinationContextMenu = (props) => {
           <TitledFrame title={"No bird selected!"}>
             <button className="context-menu-bird-destination-button button-unusable">
               <header className="popup-header">
-                <img className="context-menu-icon" src={icon} />
+                <img className="context-menu-icon" src={locationIcon} />
                 <h4>Set Destination</h4>
               </header>
             </button>
