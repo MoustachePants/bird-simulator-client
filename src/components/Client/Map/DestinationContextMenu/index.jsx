@@ -28,47 +28,44 @@ const DestinationContextMenu = (props) => {
     map.closePopup();
   };
 
+  const frameTitle = bird
+    ? bird.name + " #" + bird.tailNum
+    : "No bird selected!";
+
+  const destinationButtonClasses = bird
+    ? "context-menu-bird-destination-button"
+    : "context-menu-bird-destination-button button-unusable";
+
+  const addToRouteButtonClasses =
+    bird && !bird.state.isCircleFlight
+      ? "context-menu-bird-destination-button"
+      : "context-menu-bird-destination-button button-unusable";
+
+  // !BUG - when bird is selected and add to route button is pressed, the popup closes where it should not.
+
   return (
     <Popup position={props.position} closeButton={false} offset={[95, 110]}>
       <div className="popup-container">
-        {bird && (
-          <TitledFrame title={bird.name + " #" + bird.tailNum}>
-            <button
-              className="context-menu-bird-destination-button"
-              onClick={menuSendDestinationCommandHandler}
-            >
-              <header className="popup-header">
-                <img className="context-menu-icon" src={locationIcon} />
-                <h4>Set Destination</h4>
-              </header>
-            </button>
-            <button
-              className="context-menu-bird-destination-button"
-              onClick={menuSendRouteDestinationCommandHandler}
-            >
-              <header className="popup-header">
-                <img className="context-menu-icon" src={addLocationIcon} />
-                <h4>Add to route</h4>
-              </header>
-            </button>
-          </TitledFrame>
-        )}
-        {!bird && (
-          <TitledFrame title={"No bird selected!"}>
-            <button className="context-menu-bird-destination-button button-unusable">
-              <header className="popup-header">
-                <img className="context-menu-icon" src={locationIcon} />
-                <h4>Set Destination</h4>
-              </header>
-            </button>
-            <button className="context-menu-bird-destination-button button-unusable">
-              <header className="popup-header">
-                <img className="context-menu-icon" src={addLocationIcon} />
-                <h4>Add to route</h4>
-              </header>
-            </button>
-          </TitledFrame>
-        )}
+        <TitledFrame title={frameTitle}>
+          <button
+            className={destinationButtonClasses}
+            onClick={menuSendDestinationCommandHandler}
+          >
+            <header className="popup-header">
+              <img className="context-menu-icon" src={locationIcon} />
+              <h4>Set Destination</h4>
+            </header>
+          </button>
+          <button
+            className={addToRouteButtonClasses}
+            onClick={menuSendRouteDestinationCommandHandler}
+          >
+            <header className="popup-header">
+              <img className="context-menu-icon" src={addLocationIcon} />
+              <h4>Add to route</h4>
+            </header>
+          </button>
+        </TitledFrame>
       </div>
     </Popup>
   );

@@ -58,6 +58,9 @@ const Map = (props) => {
               <BirdFlyTo
                 position={bird.position}
                 requiredRoute={bird.required.position}
+                isCircleFlight={bird.state.isCircleFlight}
+                circleCenter={bird.state.circleCenter}
+                circleRadius={bird.circleRadius}
               />
             )}
           </div>
