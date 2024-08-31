@@ -1,3 +1,0 @@
-[build]
-  command = "bash install_dependencies.sh && npm run build"
-  publish = "build"
