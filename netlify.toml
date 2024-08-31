@@ -3,7 +3,7 @@
   publish = "build"
 
 [build.environment]
-  NODE_VERSION = "20.17.0"
+  NODE_VERSION = "18.20.4"
 
 [build.lifecycle]
   onBuildCommandStart = "apt-get update && apt-get install -y libgl1-mesa-dev"
