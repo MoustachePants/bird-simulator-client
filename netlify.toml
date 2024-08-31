@@ -1,9 +1,3 @@
 [build]
-  command = "npm run build"
+  command = "bash install_dependencies.sh && npm run build"
   publish = "build"
-
-[build.environment]
-  NODE_VERSION = "18.20.4"
-
-[build.lifecycle]
-  onBuildCommandStart = "apt-get update && apt-get install -y libgl1-mesa-dev"
