@@ -21,7 +21,7 @@
     "react-dat-gui": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.0",
-    "three": "^0.149.0"
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
