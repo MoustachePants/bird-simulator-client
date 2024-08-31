@@ -16,6 +16,7 @@ const DestinationContextMenu = (props) => {
     event.preventDefault();
     const tailNum = bird.tailNum;
     const destination = props.position;
+    console.log(destination);
     sendCommand({ tailNum, destination });
     map.closePopup();
   };
