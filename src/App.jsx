@@ -47,7 +47,10 @@ const App = () => {
       {isLoadingData && (
         <div className="loading-screen">
           <Loader />
-          <p>Loading might take few seconds...</p>
+          <p>
+            Hold tight! The page may take a couple of minutes to load while the
+            server starts up...
+          </p>
         </div>
       )}
       <Client
